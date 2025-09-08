@@ -1,0 +1,722 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="李宗達">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="數位訂單系統 📌 專案簡介數位訂單系統 是一個簡單的 訂單管理應用程式，用於建立、查詢、更新和刪除訂單資料，取代傳統的紙本作業。  定位：此系統是「訂單」的雙端解決方案，包含 行動端：讓使用者快速新增訂單。 網頁看板：即時顯示「未出貨」訂單，提供管理、修改與歷史查詢。   核心價值： 即時：Firebase 實現前端即時同步。 輕量：Serverless 架構，無需自建後端伺服器。 擴充：可依品">
+<meta property="og:type" content="article">
+<meta property="og:title" content="數位訂單系統">
+<meta property="og:url" content="http://example.com/2025/09/08/Digital-ordering-app/index.html">
+<meta property="og:site_name" content="ZongDa&#39;s website">
+<meta property="og:description" content="數位訂單系統 📌 專案簡介數位訂單系統 是一個簡單的 訂單管理應用程式，用於建立、查詢、更新和刪除訂單資料，取代傳統的紙本作業。  定位：此系統是「訂單」的雙端解決方案，包含 行動端：讓使用者快速新增訂單。 網頁看板：即時顯示「未出貨」訂單，提供管理、修改與歷史查詢。   核心價值： 即時：Firebase 實現前端即時同步。 輕量：Serverless 架構，無需自建後端伺服器。 擴充：可依品">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/%5Cimg%5Corderingapp%5C2.png">
+<meta property="og:image" content="http://example.com/%5Cimg%5Corderingapp%5C1.png">
+<meta property="og:image" content="http://example.com/%5Cimg%5Corderingapp%5C2.png">
+<meta property="og:image" content="http://example.com/img/orderingapp/5.jpg">
+<meta property="article:published_time" content="2025-09-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-09-08T03:55:53.994Z">
+<meta property="article:author" content="李宗達">
+<meta property="article:tag" content="Firebase">
+<meta property="article:tag" content="TypeScript">
+<meta property="article:tag" content="React">
+<meta property="article:tag" content="React Native">
+<meta property="article:tag" content="APP development">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/%5Cimg%5Corderingapp%5C2.png">
+  
+  
+  
+  <title>數位訂單系統 - ZongDa&#39;s website</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":80,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ZongDa&#39;s website</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/IMG1.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="數位訂單系統"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-09-08 00:00" pubdate>
+          September 8, 2025 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          521 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          5 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">數位訂單系統</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="數位訂單系統"><a href="#數位訂單系統" class="headerlink" title="數位訂單系統"></a>數位訂單系統</h1><p><img src="/%5Cimg%5Corderingapp%5C2.png" srcset="/img/loading.gif" lazyload alt="訂單大螢幕"></p>
+<h2 id="📌-專案簡介"><a href="#📌-專案簡介" class="headerlink" title="📌 專案簡介"></a>📌 專案簡介</h2><p><strong>數位訂單系統</strong> 是一個簡單的 <strong>訂單管理應用程式</strong>，用於建立、查詢、更新和刪除訂單資料，取代傳統的紙本作業。</p>
+<ul>
+<li><strong>定位</strong>：此系統是「訂單」的雙端解決方案，包含<ul>
+<li>行動端：讓使用者快速新增訂單。</li>
+<li>網頁看板：即時顯示「未出貨」訂單，提供管理、修改與歷史查詢。</li>
+</ul>
+</li>
+<li><strong>核心價值</strong>：<ul>
+<li>即時：Firebase 實現前端即時同步。</li>
+<li>輕量：Serverless 架構，無需自建後端伺服器。</li>
+<li>擴充：可依品項設定、訂單狀態流轉擴充功能。</li>
+</ul>
+</li>
+</ul>
+<p>👉 <a target="_blank" rel="noopener" href="https://github.com/Zongda617/orders-app">GitHub 原始碼</a></p>
+<hr>
+<h2 id="✨-功能特色"><a href="#✨-功能特色" class="headerlink" title="✨ 功能特色"></a>✨ 功能特色</h2><ul>
+<li><strong>新增訂單</strong>：輸入訂單編號、客戶名稱、品項、數量等資訊  </li>
+<li><strong>查詢訂單</strong>：快速搜尋既有訂單  </li>
+<li><strong>更新訂單</strong>：修改現有訂單的內容  </li>
+<li><strong>刪除訂單</strong>：移除不需要的訂單</li>
+<li><strong>跨裝置使用</strong>：手機、平板、電腦皆可操作，方便長輩與各行各業使用</li>
+<li><strong>即時同步</strong>：輸入的訂單會即時顯示與更新，不需要再手寫或重新整理</li>
+<li><strong>清晰 UI</strong>：直觀的操作介面，僅需輸入基本資訊即可完成下單</li>
+</ul>
+<hr>
+<h2 id="⚙️-技術架構"><a href="#⚙️-技術架構" class="headerlink" title="⚙️ 技術架構"></a>⚙️ 技術架構</h2><ul>
+<li><strong>前端（行動端）</strong>：Expo + React Native</li>
+<li><strong>前端（Web 看板）</strong>：React  + react-scripts </li>
+<li><strong>雲端後端</strong>：Firebase  </li>
+<li><strong>語言</strong>：TypeScript &#x2F; JavaScript</li>
+</ul>
+<hr>
+<h2 id="📂-專案結構"><a href="#📂-專案結構" class="headerlink" title="📂 專案結構"></a>📂 專案結構</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Digital ordering app/<br>├─ mobile-app/         # React Native App<br>├─ web-display/        # 大螢幕展示網頁<br>├─ firebase/           # Firebase 設定與說明<br>└─ README.md<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="🚀-使用方式"><a href="#🚀-使用方式" class="headerlink" title="🚀 使用方式"></a>🚀 使用方式</h2><p>需要先到網頁新增品項 APP端才會有品項可以選擇</p>
+<h3 id="網頁端"><a href="#網頁端" class="headerlink" title="網頁端"></a>網頁端</h3><p>網站 👉 <a target="_blank" rel="noopener" href="https://pork-orders-app.web.app/">訂單網站</a></p>
+<ol>
+<li>進入設置</li>
+<li>點擊品項設置</li>
+<li>輸入品項名稱及單位 點擊新增<br><img src="/%5Cimg%5Corderingapp%5C1.png" srcset="/img/loading.gif" lazyload alt="品項設定"></li>
+<li>到行動端輸入訂單</li>
+<li>網頁上即可看見訂單資訊<br><img src="/%5Cimg%5Corderingapp%5C2.png" srcset="/img/loading.gif" lazyload alt="訂單大螢幕"></li>
+</ol>
+<h3 id="行動端"><a href="#行動端" class="headerlink" title="行動端"></a>行動端</h3><ol>
+<li>輸入「客戶名稱」  </li>
+<li>勾選所需品項（在網頁中新增的品項）  </li>
+<li>選擇「交貨日期」  </li>
+<li>填寫「備註」(可選填)  </li>
+<li>按下 <strong>送出訂單</strong> 即完成！</li>
+</ol>
+<p align="center">
+  <img src="\img\orderingapp\5.jpg" srcset="/img/loading.gif" lazyload alt="行動裝置" width="300">
+</p>
+
+<hr>
+<h2 id="🙌-適用對象"><a href="#🙌-適用對象" class="headerlink" title="🙌 適用對象"></a>🙌 適用對象</h2><ul>
+<li>中小型商家（肉販、農產品、餐飲業）  </li>
+<li>長輩族群（簡單輸入即可下單）  </li>
+<li>任何需要「快速記錄訂單」的行業</li>
+</ul>
+<p>👉 <a target="_blank" rel="noopener" href="https://github.com/Zongda617/orders-app">GitHub Repo 連結</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Side-Projects/" class="category-chain-item">Side Projects</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Firebase/" class="print-no-link">#Firebase</a>
+      
+        <a href="/tags/TypeScript/" class="print-no-link">#TypeScript</a>
+      
+        <a href="/tags/React/" class="print-no-link">#React</a>
+      
+        <a href="/tags/React-Native/" class="print-no-link">#React Native</a>
+      
+        <a href="/tags/APP-development/" class="print-no-link">#APP development</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>數位訂單系統</div>
+      <div>http://example.com/2025/09/08/Digital-ordering-app/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>李宗達</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>September 8, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/09/05/Hearthstone-Card-Downloader/" title="爐石卡牌資料抓取工具">
+                        <span class="hidden-mobile">爐石卡牌資料抓取工具</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <p>© 2025 ZongDa Li</p> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
