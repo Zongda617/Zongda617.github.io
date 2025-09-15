@@ -19,15 +19,15 @@
   <meta name="author" content="李宗達">
   <meta name="keywords" content="">
   
-    <meta name="description" content="UVA 00272-TeX-Quotes👉 題目連結 📖題目說明給你一段由多行文字組成的句子集合，請將這些文字 順時針旋轉 90° 後輸出 輸入與輸出輸入多行文字（每行字串長度 ≤ 100）行數不固定，直到檔案結束EOF 輸出將所有輸入的文字區塊順時針旋轉 90°，逐行輸出旋轉後的結果 ⚠️注意事項與陷阱  行長不一: 有些輸入行可能比其他行短。旋轉時要把短行補齊（視為空格 ‘ ‘） EOF">
+    <meta name="description" content="UVA 00272-TeX-Quotes👉 題目連結 📖題目說明給你一段由多行文字組成的句子集合，請將這些文字 順時針旋轉 90° 後輸出 輸入與輸出輸入多行文字（每行字串長度 ≤ 100）行數不固定，直到檔案結束EOF 輸出將所有輸入的文字區塊順時針旋轉 90°，逐行輸出旋轉後的結果   ⚠️注意事項與陷阱  行長不一: 有些輸入行可能比其他行短。旋轉時要把短行補齊（視為空格 ‘ ‘） EO">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UVA 00490 - Rotating Sentences">
 <meta property="og:url" content="https://zongda617.github.io/2025/09/13/UVA-00490-Rotating-Sentences/index.html">
 <meta property="og:site_name" content="ZongDa&#39;s website">
-<meta property="og:description" content="UVA 00272-TeX-Quotes👉 題目連結 📖題目說明給你一段由多行文字組成的句子集合，請將這些文字 順時針旋轉 90° 後輸出 輸入與輸出輸入多行文字（每行字串長度 ≤ 100）行數不固定，直到檔案結束EOF 輸出將所有輸入的文字區塊順時針旋轉 90°，逐行輸出旋轉後的結果 ⚠️注意事項與陷阱  行長不一: 有些輸入行可能比其他行短。旋轉時要把短行補齊（視為空格 ‘ ‘） EOF">
+<meta property="og:description" content="UVA 00272-TeX-Quotes👉 題目連結 📖題目說明給你一段由多行文字組成的句子集合，請將這些文字 順時針旋轉 90° 後輸出 輸入與輸出輸入多行文字（每行字串長度 ≤ 100）行數不固定，直到檔案結束EOF 輸出將所有輸入的文字區塊順時針旋轉 90°，逐行輸出旋轉後的結果   ⚠️注意事項與陷阱  行長不一: 有些輸入行可能比其他行短。旋轉時要把短行補齊（視為空格 ‘ ‘） EO">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-09-13T14:44:16.000Z">
-<meta property="article:modified_time" content="2025-09-13T14:58:39.715Z">
+<meta property="article:modified_time" content="2025-09-15T09:28:58.385Z">
 <meta property="article:author" content="李宗達">
 <meta property="article:tag" content="UVA">
 <meta name="twitter:card" content="summary_large_image">
@@ -277,7 +277,9 @@
                 <h1 id="UVA-00272-TeX-Quotes"><a href="#UVA-00272-TeX-Quotes" class="headerlink" title="UVA 00272-TeX-Quotes"></a>UVA 00272-TeX-Quotes</h1><p>👉 <a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=c045">題目連結</a></p>
 <h2 id="📖題目說明"><a href="#📖題目說明" class="headerlink" title="📖題目說明"></a>📖題目說明</h2><p>給你一段由多行文字組成的句子集合，請將這些文字 順時針旋轉 90° 後輸出</p>
 <h2 id="輸入與輸出"><a href="#輸入與輸出" class="headerlink" title="輸入與輸出"></a>輸入與輸出</h2><h3 id="輸入"><a href="#輸入" class="headerlink" title="輸入"></a>輸入</h3><p>多行文字（每行字串長度 ≤ 100）<br>行數不固定，直到檔案結束<code>EOF</code></p>
-<h3 id="輸出"><a href="#輸出" class="headerlink" title="輸出"></a>輸出</h3><h2 id="將所有輸入的文字區塊順時針旋轉-90°，逐行輸出旋轉後的結果"><a href="#將所有輸入的文字區塊順時針旋轉-90°，逐行輸出旋轉後的結果" class="headerlink" title="將所有輸入的文字區塊順時針旋轉 90°，逐行輸出旋轉後的結果"></a>將所有輸入的文字區塊順時針旋轉 90°，逐行輸出旋轉後的結果</h2><blockquote>
+<h3 id="輸出"><a href="#輸出" class="headerlink" title="輸出"></a>輸出</h3><p>將所有輸入的文字區塊順時針旋轉 90°，逐行輸出旋轉後的結果</p>
+<hr>
+<blockquote>
 <p><strong>⚠️注意事項與陷阱</strong></p>
 <ol>
 <li><strong>行長不一</strong>: 有些輸入行可能比其他行短。旋轉時要把短行補齊（視為空格 ‘ ‘）</li>
@@ -286,7 +288,9 @@
 </ol>
 </blockquote>
 <hr>
-<h2 id="解題想法"><a href="#解題想法" class="headerlink" title="解題想法"></a>解題想法</h2><h2 id="使用泡沫排序的概念每次發現相鄰逆序就交換，並把交換次數加一最後總交換次數就是答案"><a href="#使用泡沫排序的概念每次發現相鄰逆序就交換，並把交換次數加一最後總交換次數就是答案" class="headerlink" title="使用泡沫排序的概念每次發現相鄰逆序就交換，並把交換次數加一最後總交換次數就是答案"></a>使用泡沫排序的概念<br>每次發現相鄰逆序就交換，並把交換次數加一<br>最後總交換次數就是答案</h2><h2 id="範例輸入與輸出"><a href="#範例輸入與輸出" class="headerlink" title="範例輸入與輸出"></a>範例輸入與輸出</h2><table>
+<h2 id="解題想法"><a href="#解題想法" class="headerlink" title="解題想法"></a>解題想法</h2><p>使用泡沫排序的概念<br>每次發現相鄰逆序就交換，並把交換次數加一<br>最後總交換次數就是答案</p>
+<hr>
+<h2 id="範例輸入與輸出"><a href="#範例輸入與輸出" class="headerlink" title="範例輸入與輸出"></a>範例輸入與輸出</h2><table>
 <thead>
 <tr>
 <th>Sample Input</th>
@@ -391,6 +395,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2025/09/15/LeetCode-1-Two-Sum/" title="LeetCode 1 - Two Sum">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">LeetCode 1 - Two Sum</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
