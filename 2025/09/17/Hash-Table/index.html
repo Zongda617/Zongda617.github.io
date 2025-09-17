@@ -19,24 +19,26 @@
   <meta name="author" content="李宗達">
   <meta name="keywords" content="">
   
-    <meta name="description" content="LeetCode 2 - Add Two Numbers👉 題目連結 📖題目說明 You are given two non-empty linked lists representing two non-negative integers.The digits are stored in reverse order, and each of their nodes contains a si">
+    <meta name="description" content="為什麼需要 Hash Table？想像一下，你要在一本電話簿裡找「John Smith 的電話號碼是多少？」如果電話簿只是按照登錄順序存放（像是一張普通的清單 Array），你可能要從頭開始一個一個比對名字，直到找到 John Smith。當電話簿只有 10 個名字還好，但如果有 1 萬個人呢？那就會變得非常慢。   這時候，Hash Table（雜湊表） 就登場了！它就像是一個「超快速的電話簿">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 2 - Add Two Numbers">
-<meta property="og:url" content="https://zongda617.github.io/2025/09/17/LeetCode-2-Add-Two-Numbers/index.html">
+<meta property="og:title" content="雜湊表(Hash Table)">
+<meta property="og:url" content="https://zongda617.github.io/2025/09/17/Hash-Table/index.html">
 <meta property="og:site_name" content="ZongDa&#39;s website">
-<meta property="og:description" content="LeetCode 2 - Add Two Numbers👉 題目連結 📖題目說明 You are given two non-empty linked lists representing two non-negative integers.The digits are stored in reverse order, and each of their nodes contains a si">
+<meta property="og:description" content="為什麼需要 Hash Table？想像一下，你要在一本電話簿裡找「John Smith 的電話號碼是多少？」如果電話簿只是按照登錄順序存放（像是一張普通的清單 Array），你可能要從頭開始一個一個比對名字，直到找到 John Smith。當電話簿只有 10 個名字還好，但如果有 1 萬個人呢？那就會變得非常慢。   這時候，Hash Table（雜湊表） 就登場了！它就像是一個「超快速的電話簿">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://zongda617.github.io/2025/09/17/LeetCode-2-Add-Two-Numbers/1.jpg">
+<meta property="og:image" content="https://zongda617.github.io/2025/09/17/Hash-Table/hash_table.png">
 <meta property="article:published_time" content="2025-09-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-09-17T03:49:52.522Z">
+<meta property="article:modified_time" content="2025-09-17T05:55:59.006Z">
 <meta property="article:author" content="李宗達">
-<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="Hash Table">
+<meta property="article:tag" content="Hash Function">
+<meta property="article:tag" content="Collision">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://zongda617.github.io/2025/09/17/LeetCode-2-Add-Two-Numbers/1.jpg">
+<meta name="twitter:image" content="https://zongda617.github.io/2025/09/17/Hash-Table/hash_table.png">
   
   
   
-  <title>LeetCode 2 - Add Two Numbers - ZongDa&#39;s website</title>
+  <title>雜湊表(Hash Table) - ZongDa&#39;s website</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LeetCode 2 - Add Two Numbers"></span>
+            <span id="subtitle" data-typed-text="雜湊表(Hash Table)"></span>
           
         </div>
 
@@ -223,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          373 words
+          1.1k words
         
       </span>
     
@@ -234,7 +236,7 @@
         
         
         
-          4 mins
+          10 mins
         
       </span>
     
@@ -271,38 +273,126 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LeetCode 2 - Add Two Numbers</h1>
+            <h1 id="seo-header">雜湊表(Hash Table)</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="LeetCode-2-Add-Two-Numbers"><a href="#LeetCode-2-Add-Two-Numbers" class="headerlink" title="LeetCode 2 - Add Two Numbers"></a>LeetCode 2 - Add Two Numbers</h1><p>👉 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/add-two-numbers/description/">題目連結</a></p>
-<h2 id="📖題目說明"><a href="#📖題目說明" class="headerlink" title="📖題目說明"></a>📖題目說明</h2><blockquote>
-<p>You are given two non-empty linked lists representing two non-negative integers.<br>The digits are stored in reverse order, and each of their nodes contains a single digit.<br>Add the two numbers and return the sum as a linked list.<br>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
-</blockquote>
-<p>給兩個單向鏈結串列 <code>l1</code>、<code>l2</code>，每個節點存一位數字<br>數字以反向儲存代表一個十進位整數<br>回傳兩數之和的鏈結串列</p>
-<hr>
-<h2 id="範例輸入與輸出"><a href="#範例輸入與輸出" class="headerlink" title="範例輸入與輸出"></a>範例輸入與輸出</h2><img src="/2025/09/17/LeetCode-2-Add-Two-Numbers/1.jpg" class="">
-<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><blockquote>
-<p><strong>Input</strong>: l1 &#x3D; [2,4,3], l2 &#x3D; [5,6,4]<br><strong>Output</strong>: [7,0,8]<br><strong>Explanation</strong>: 342 + 465 &#x3D; 807.</p>
-</blockquote>
-<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><blockquote>
-<p><strong>Input</strong>: l1 &#x3D; [0], l2 &#x3D; [0]<br><strong>Output</strong>: [0]</p>
-</blockquote>
-<h3 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h3><blockquote>
-<p><strong>Input</strong>: l1 &#x3D; [9,9,9,9,9,9,9], l2 &#x3D; [9,9,9,9]<br><strong>Output</strong>: [8,9,9,9,0,0,0,1]</p>
-</blockquote>
-<hr>
-<h2 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h2><ul>
-<li>每個鏈中的節點數量在 [1, 100] 範圍內</li>
-<li><code>0 &lt;= Node.val &lt;= 9</code></li>
-<li>不會有 0 開頭的鏈結串列</li>
+                <img src="/2025/09/17/Hash-Table/hash_table.png" class="">
+<h1 id="為什麼需要-Hash-Table？"><a href="#為什麼需要-Hash-Table？" class="headerlink" title="為什麼需要 Hash Table？"></a>為什麼需要 Hash Table？</h1><p>想像一下，你要在一本電話簿裡找「John Smith 的電話號碼是多少？」<br>如果電話簿只是按照登錄順序存放（像是一張普通的清單 Array），<br>你可能要從頭開始一個一個比對名字，直到找到 John Smith。<br>當電話簿只有 10 個名字還好，但如果有 1 萬個人呢？那就會變得非常慢。  </p>
+<p>這時候，<strong>Hash Table（雜湊表）</strong> 就登場了！<br>它就像是一個「超快速的電話簿索引系統」，<br>能讓我們在幾乎 <strong>瞬間</strong> 找到對應的電話號碼，而不需要一個一個比。  </p>
+<h2 id="什麼是-Hash-Table？"><a href="#什麼是-Hash-Table？" class="headerlink" title="什麼是 Hash Table？"></a>什麼是 Hash Table？</h2><p><strong>Hash Table（雜湊表）</strong> 是一種用來快速存取資料的資料結構。<br>它的核心概念是：  </p>
+<ul>
+<li>每一筆資料都有一個 <strong>Key（鑰匙）</strong>。  </li>
+<li>透過 <strong>Hash Function（雜湊函數）</strong>，這個 Key 會被轉換成一個「索引值」。  </li>
+<li>這個索引值就告訴我們，資料要放在哪個位置（Bucket&#x2F;抽屜）。<br>這樣一來，當我們想要存取某筆資料時，<br>只要用同樣的 Key 再跑一次雜湊函數，就能 <strong>直接跳到正確的位置</strong>，幾乎不需要搜尋。</li>
 </ul>
-<hr>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="暴力解"><a href="#暴力解" class="headerlink" title="暴力解"></a>暴力解</h3><p><strong>解題想法</strong>: 將兩鏈結串列轉成整數做相加，最後把和轉回鏈結串列<br><strong>時間複雜度</strong>: O(m+n)<br><strong>空間複雜度</strong>: O(m+n)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">linkedlist_to_number</span>(<span class="hljs-params">self,l</span>):<br>        num = <span class="hljs-string">&quot;&quot;</span><br>        <span class="hljs-keyword">while</span> l:<br>            num += <span class="hljs-built_in">str</span>(l.val)<br>            l = l.<span class="hljs-built_in">next</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">int</span>(num[::-<span class="hljs-number">1</span>])<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">number_to_linkedlist</span>(<span class="hljs-params">self, num</span>):<br>        head = ListNode(<span class="hljs-number">0</span>)<br>        curr = head<br>        <span class="hljs-keyword">for</span> d <span class="hljs-keyword">in</span> <span class="hljs-built_in">str</span>(num)[::-<span class="hljs-number">1</span>]:   <br>            curr.<span class="hljs-built_in">next</span> = ListNode(<span class="hljs-built_in">int</span>(d))<br>            curr = curr.<span class="hljs-built_in">next</span><br>        <span class="hljs-keyword">return</span> head.<span class="hljs-built_in">next</span> <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">addTwoNumbers</span>(<span class="hljs-params">self, l1, l2</span>):<br>        l1= <span class="hljs-variable language_">self</span>.linkedlist_to_number(l1)<br>        l2= <span class="hljs-variable language_">self</span>.linkedlist_to_number(l2)<br>        <span class="hljs-built_in">sum</span> = l1+l2<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.number_to_linkedlist(<span class="hljs-built_in">sum</span>)<br></code></pre></td></tr></table></figure>
-<h3 id="指標法"><a href="#指標法" class="headerlink" title="指標法"></a>指標法</h3><p><strong>解題想法</strong>: 用兩個指標同步遍歷 <code>l1</code>、<code>l2</code>，每位數加總並處理進位，將結果依序接到一個 <code>dummy head</code> 後面，最後若還有進位就補一個節點，回傳 <code>dummy.next</code> 即為答案。<br><strong>時間複雜度</strong>: O(m+n)<br><strong>空間複雜度</strong>: O(1)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">addTwoNumbers</span>(<span class="hljs-params">self, l1, l2</span>):<br>        dummy = ListNode(<span class="hljs-number">0</span>)<br>        current = dummy<br>        carry = <span class="hljs-number">0</span><br>        <br>        p,q = l1,l2<br>        <span class="hljs-keyword">while</span> p <span class="hljs-keyword">or</span> q <span class="hljs-keyword">or</span> carry:  <br>            x = p.val <span class="hljs-keyword">if</span> p <span class="hljs-keyword">else</span> <span class="hljs-number">0</span><br>            y = q.val <span class="hljs-keyword">if</span> q <span class="hljs-keyword">else</span> <span class="hljs-number">0</span><br>            numsum = x + y+ carry<br>            <br>            current.<span class="hljs-built_in">next</span> = ListNode(val=numsum%<span class="hljs-number">10</span>)<br>            current = current.<span class="hljs-built_in">next</span><br><br>            carry = numsum//<span class="hljs-number">10</span> <br>            <span class="hljs-keyword">if</span> p: p = p.<span class="hljs-built_in">next</span><br>            <span class="hljs-keyword">if</span> q: q = q.<span class="hljs-built_in">next</span><br>        <span class="hljs-keyword">return</span> dummy.<span class="hljs-built_in">next</span>    <br></code></pre></td></tr></table></figure>
+<h3 id="生活比喻"><a href="#生活比喻" class="headerlink" title="生活比喻"></a>生活比喻</h3><p>把 Hash Table 想像成一間旅館：  </p>
+<ol>
+<li>每位客人（資料）有一張房卡（Key）。  </li>
+<li>櫃台的電腦會用「雜湊函數」算出客人要住的房號（Index）。  </li>
+<li>客人拿到房號後，直接去房間就能找到自己要的地方。</li>
+</ol>
+<h2 id="Hash-Function（雜湊函數）"><a href="#Hash-Function（雜湊函數）" class="headerlink" title="Hash Function（雜湊函數）"></a>Hash Function（雜湊函數）</h2><p>要讓 Hash Table 運作，最重要的就是 <strong>Hash Function（雜湊函數）</strong>。<br>它是一個「公式」或「演算法」，用來把 Key 轉換成一個 <strong>索引值（Index）</strong>，<br>決定資料要放在哪個位置。</p>
+<h3 id="Hash-Function-應該具備："><a href="#Hash-Function-應該具備：" class="headerlink" title="Hash Function 應該具備："></a>Hash Function 應該具備：</h3><ol>
+<li><strong>計算速度快</strong> → 不能太複雜。  </li>
+<li><strong>分布平均</strong> → 資料不要都集中在某些位置，否則容易發生衝突。  </li>
+<li><strong>相同的 Key 必須得到相同的結果</strong> → 才能正確找到資料。</li>
+</ol>
+<h3 id="常見的-Hash-Function"><a href="#常見的-Hash-Function" class="headerlink" title="常見的 Hash Function"></a>常見的 Hash Function</h3><p>以下是一些常見的雜湊函數設計方法：</p>
+<ol>
+<li><p><strong>除法取餘數法（Division Method）</strong></p>
+<ul>
+<li>最簡單常見的方法：  <figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss"><span class="hljs-built_in">h</span>(<span class="hljs-built_in">key</span>) = <span class="hljs-built_in">key</span> % m<br></code></pre></td></tr></table></figure></li>
+<li><code>m</code> 通常選擇質數，能讓資料分布更平均。  </li>
+<li>例子：<code>12345 % 10 = 5</code></li>
+</ul>
+</li>
+<li><p><strong>乘法法（Multiplication Method）</strong></p>
+<ul>
+<li>利用一個 0 &lt; A &lt; 1 的常數，計算公式：  <figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss"><span class="hljs-built_in">h</span>(<span class="hljs-built_in">key</span>) = <span class="hljs-built_in">floor</span>( m * ( (<span class="hljs-built_in">key</span> * A) % <span class="hljs-number">1</span> ) )<br></code></pre></td></tr></table></figure></li>
+<li>好處：對 m 的選擇不敏感，分布更隨機。</li>
+</ul>
+</li>
+<li><p><strong>字串雜湊（String Hashing）</strong></p>
+<ul>
+<li>常用於把文字（例如名字、單字）轉換成數字：  <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">h</span>(s) = (s[<span class="hljs-number">0</span>] * p^<span class="hljs-number">0</span> + s[<span class="hljs-number">1</span>] * p^<span class="hljs-number">1</span> + ... + s[n-<span class="hljs-number">1</span>] * p^(n-<span class="hljs-number">1</span>)) % m<br></code></pre></td></tr></table></figure></li>
+<li>其中 p 通常取 31 或 131，<code>m</code> 是一個大的質數。  </li>
+<li>例子：  <ul>
+<li>“abc” → <code>97*31^0 + 98*31^1 + 99*31^2</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="碰撞（Collision）"><a href="#碰撞（Collision）" class="headerlink" title="碰撞（Collision）"></a>碰撞（Collision）</h2><p>雖然 Hash Function 能幫我們把資料分配到不同位置，<br>但有時候 <strong>不同的 Key 可能算出相同的索引值</strong>，這種情況就叫做 <strong>碰撞（Collision）</strong>。</p>
+<h3 id="為什麼會碰撞？"><a href="#為什麼會碰撞？" class="headerlink" title="為什麼會碰撞？"></a>為什麼會碰撞？</h3><p>舉例來說：  </p>
+<ul>
+<li>我們的公式是 <code>index = 學號 % 10</code>  </li>
+<li>學號 <code>12345 % 10 = 5</code>  </li>
+<li>學號 <code>54325 % 10 = 5</code></li>
+</ul>
+<p>這兩筆資料都要放到第 5 號位置，這就是碰撞。</p>
+<h3 id="常見解決方法"><a href="#常見解決方法" class="headerlink" title="常見解決方法"></a>常見解決方法</h3><h4 id="1-鏈結法（Chaining）"><a href="#1-鏈結法（Chaining）" class="headerlink" title="1. 鏈結法（Chaining）"></a>1. 鏈結法（Chaining）</h4><ul>
+<li>每個位置（Bucket）不只放一筆資料，而是放一個「鏈結串列」。  </li>
+<li>碰撞時，把新的資料加到串列裡。</li>
+</ul>
+<p>優點：簡單易懂，不怕資料增加。<br>缺點：如果太多碰撞，搜尋效率會變慢。</p>
+<h4 id="2-開放定址法（Open-Addressing）"><a href="#2-開放定址法（Open-Addressing）" class="headerlink" title="2. 開放定址法（Open Addressing）"></a>2. 開放定址法（Open Addressing）</h4><ul>
+<li>如果原本的位置被佔了，就找下一個空位放。  </li>
+<li>常見策略：<ul>
+<li><strong>線性探測（Linear Probing）</strong>：往後一格一格找。  </li>
+<li><strong>二次探測（Quadratic Probing）</strong>：往後跳 1²、2²、3²… 去找。  </li>
+<li><strong>雙重雜湊（Double Hashing）</strong>：再用另一個 Hash Function 幫忙。</li>
+</ul>
+</li>
+</ul>
+<p>優點：不需要額外鏈結結構。<br>缺點：如果裝太滿，碰撞會更多，效率會下降。</p>
+<h2 id="Hash-Table-的優缺點"><a href="#Hash-Table-的優缺點" class="headerlink" title="Hash Table 的優缺點"></a>Hash Table 的優缺點</h2><p>雖然 Hash Table 很強大，但它並不是完美的。<br>我們來看看它的 <strong>優點</strong> 和 <strong>缺點</strong>：</p>
+<h3 id="優點-👍"><a href="#優點-👍" class="headerlink" title="優點 👍"></a>優點 👍</h3><ol>
+<li><p><strong>存取速度快</strong>  </p>
+<ul>
+<li>插入、查找、刪除的平均時間複雜度都是 <strong>O(1)</strong>。  </li>
+<li>適合需要大量快速查詢的應用場景。</li>
+</ul>
+</li>
+<li><p><strong>使用簡單</strong>  </p>
+<ul>
+<li>大部分程式語言都已經幫你實作好 Hash Table。  </li>
+<li>例如：  <ul>
+<li>Python → <code>dict</code>&#x2F; <code>set</code>  </li>
+<li>Java → <code>HashMap</code> &#x2F; <code>HashSet</code>  </li>
+<li>JavaScript → <code>Object</code> &#x2F; <code>Map</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="缺點-👎"><a href="#缺點-👎" class="headerlink" title="缺點 👎"></a>缺點 👎</h3><ol>
+<li><p><strong>碰撞（Collision）問題</strong>  </p>
+<ul>
+<li>不同的 Key 可能會被分配到同一個位置。  </li>
+<li>如果碰撞太多，效率就會下降。</li>
+</ul>
+</li>
+<li><p><strong>需要好的 Hash Function</strong>  </p>
+<ul>
+<li>Hash Function 設計不好，資料會集中在少數位置，導致效能差。</li>
+</ul>
+</li>
+<li><p><strong>記憶體消耗較大</strong>  </p>
+<ul>
+<li>為了減少碰撞，Hash Table 通常會配置比實際資料量更多的空間。</li>
+</ul>
+</li>
+<li><p><strong>元素無法保證順序</strong>  </p>
+<ul>
+<li>Hash Table 注重「快」而不是「順序」。  </li>
+<li>如果你需要保持資料的順序，Hash Table 並不適合。</li>
+</ul>
+</li>
+</ol>
+
                 
               </div>
             
@@ -320,8 +410,15 @@
     
       <span class="category-chain">
         
-  <a href="/categories/LeetCode/" class="category-chain-item">LeetCode</a>
+  <a href="/categories/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/" class="category-chain-item">資料結構</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/" class="category-chain-item">學習筆記</a>
+  
+  
+
   
 
       </span>
@@ -335,7 +432,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/LeetCode/" class="print-no-link">#LeetCode</a>
+        <a href="/tags/Hash-Table/" class="print-no-link">#Hash Table</a>
+      
+        <a href="/tags/Hash-Function/" class="print-no-link">#Hash Function</a>
+      
+        <a href="/tags/Collision/" class="print-no-link">#Collision</a>
       
     </div>
   
@@ -347,8 +448,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LeetCode 2 - Add Two Numbers</div>
-      <div>https://zongda617.github.io/2025/09/17/LeetCode-2-Add-Two-Numbers/</div>
+      <div>雜湊表(Hash Table)</div>
+      <div>https://zongda617.github.io/2025/09/17/Hash-Table/</div>
     </div>
     <div class="license-meta">
       
@@ -392,18 +493,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/09/17/Hash-Table/" title="雜湊表(Hash Table)">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">雜湊表(Hash Table)</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/09/17/UVA-00948-Fibonaccimal-Base/" title="UVA 00948 - Fibonaccimal Base">
-                        <span class="hidden-mobile">UVA 00948 - Fibonaccimal Base</span>
+                      <a href="/2025/09/17/LeetCode-2-Add-Two-Numbers/" title="LeetCode 2 - Add Two Numbers">
+                        <span class="hidden-mobile">LeetCode 2 - Add Two Numbers</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
