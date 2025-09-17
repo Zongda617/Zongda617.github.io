@@ -26,17 +26,17 @@
 <meta property="og:site_name" content="ZongDa&#39;s website">
 <meta property="og:description" content="想像一下，你要在一本厚厚的書裡找「第十章節的內容是什麼？」如果書沒有目錄（就像一個普通的清單 Array）你只能一頁一頁翻，直到翻到第十章節，這樣搜尋速度非常慢當書只有 10 頁還好，但如果有 1000 頁，這就會變得很低效  但如果書有「目錄」，你只要先查目錄找到該章節的頁碼就能直接翻到對應的頁數（像是直接定位到索引值 Index）這樣搜尋就會變得非常快！   Hash Table就像是幫資料加">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://zongda617.github.io/2025/09/17/Hash-Table/undefined">
+<meta property="og:image" content="https://zongda617.github.io/2025/09/17/Hash-Table/hash_table.png">
 <meta property="og:image" content="https://zongda617.github.io/2025/09/17/Hash-Table/1.jpg">
 <meta property="og:image" content="https://zongda617.github.io/2025/09/17/Hash-Table/2.gif">
 <meta property="article:published_time" content="2025-09-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-09-17T09:35:23.326Z">
+<meta property="article:modified_time" content="2025-09-17T09:39:24.508Z">
 <meta property="article:author" content="李宗達">
 <meta property="article:tag" content="Hash Table">
 <meta property="article:tag" content="Hash Function">
 <meta property="article:tag" content="Collision">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://zongda617.github.io/2025/09/17/Hash-Table/undefined">
+<meta name="twitter:image" content="https://zongda617.github.io/2025/09/17/Hash-Table/hash_table.png">
   
   
   
@@ -284,7 +284,7 @@
 <p>但如果書有「目錄」，你只要先查目錄找到該章節的頁碼<br>就能直接翻到對應的頁數（像是直接定位到索引值 Index）<br>這樣搜尋就會變得非常快！  </p>
 <p><strong>Hash Table</strong>就像是幫資料加上一個「目錄」，<br>讓你能快速跳到正確的位置，而不需要一個一個比對。</p>
 <h2 id="什麼是-Hash-Table？"><a href="#什麼是-Hash-Table？" class="headerlink" title="什麼是 Hash Table？"></a>什麼是 Hash Table？</h2><p style="text-align:center">
-  <img src="/2025/09/17/Hash-Table/undefined"  alt="hash_table" style="width:250px; height:auto;">
+  <img src="/2025/09/17/Hash-Table/hash_table.png"  alt="hash_table" style="width:250px; height:auto;">
 </p>
 
 <p>**Hash Table（雜湊表）**是一種用來快速存取資料的資料結構。<br>它的核心概念是：  </p>
@@ -328,8 +328,7 @@
 <li>學號 <code>54325 % 10 = 5</code></li>
 </ul>
 <p>這兩筆資料都要放到第 5 號位置，這就是碰撞。</p>
-<h3 id="常見解決方法"><a href="#常見解決方法" class="headerlink" title="常見解決方法"></a>常見解決方法</h3><h4 id="1-鏈結法（Chaining）"><a href="#1-鏈結法（Chaining）" class="headerlink" title="1. 鏈結法（Chaining）"></a>1. 鏈結法（Chaining）</h4><img src="/2025/09/17/Hash-Table/1.jpg" class="">
-<p>Source：<a target="_blank" rel="noopener" href="https://pumpkinprogrammerdotcom4.wordpress.com/tag/linked-list/">Pumpkin Programmer</a></p>
+<h3 id="常見解決方法"><a href="#常見解決方法" class="headerlink" title="常見解決方法"></a>常見解決方法</h3><h4 id="1-鏈結法（Chaining）"><a href="#1-鏈結法（Chaining）" class="headerlink" title="1. 鏈結法（Chaining）"></a>1. 鏈結法（Chaining）</h4><img src="/2025/09/17/Hash-Table/1.jpg" class="" title="[Source：[Pumpkin Programmer](https:&#x2F;&#x2F;pumpkinprogrammerdotcom4.wordpress.com&#x2F;tag&#x2F;linked-list&#x2F;)]">
 <ul>
 <li>每個位置（Bucket）不只放一筆資料，而是放一個「鏈結串列」。  </li>
 <li>碰撞時，把新的資料加到串列裡。</li>
@@ -415,13 +414,6 @@
         
   <a href="/categories/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/" class="category-chain-item">資料結構</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/" class="category-chain-item">學習筆記</a>
-  
-  
-
   
 
       </span>
