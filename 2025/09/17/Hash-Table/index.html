@@ -19,22 +19,24 @@
   <meta name="author" content="李宗達">
   <meta name="keywords" content="">
   
-    <meta name="description" content="為什麼需要 Hash Table？想像一下，你要在一本電話簿裡找「John Smith 的電話號碼是多少？」如果電話簿只是按照登錄順序存放（像是一張普通的清單 Array），你可能要從頭開始一個一個比對名字，直到找到 John Smith。當電話簿只有 10 個名字還好，但如果有 1 萬個人呢？那就會變得非常慢。   這時候，Hash Table（雜湊表） 就登場了！它就像是一個「超快速的電話簿">
+    <meta name="description" content="想像一下，你要在一本厚厚的書裡找「第十章節的內容是什麼？」如果書沒有目錄（就像一個普通的清單 Array）你只能一頁一頁翻，直到翻到第十章節，這樣搜尋速度非常慢當書只有 10 頁還好，但如果有 1000 頁，這就會變得很低效  但如果書有「目錄」，你只要先查目錄找到該章節的頁碼就能直接翻到對應的頁數（像是直接定位到索引值 Index）這樣搜尋就會變得非常快！   Hash Table就像是幫資料加">
 <meta property="og:type" content="article">
 <meta property="og:title" content="雜湊表(Hash Table)">
 <meta property="og:url" content="https://zongda617.github.io/2025/09/17/Hash-Table/index.html">
 <meta property="og:site_name" content="ZongDa&#39;s website">
-<meta property="og:description" content="為什麼需要 Hash Table？想像一下，你要在一本電話簿裡找「John Smith 的電話號碼是多少？」如果電話簿只是按照登錄順序存放（像是一張普通的清單 Array），你可能要從頭開始一個一個比對名字，直到找到 John Smith。當電話簿只有 10 個名字還好，但如果有 1 萬個人呢？那就會變得非常慢。   這時候，Hash Table（雜湊表） 就登場了！它就像是一個「超快速的電話簿">
+<meta property="og:description" content="想像一下，你要在一本厚厚的書裡找「第十章節的內容是什麼？」如果書沒有目錄（就像一個普通的清單 Array）你只能一頁一頁翻，直到翻到第十章節，這樣搜尋速度非常慢當書只有 10 頁還好，但如果有 1000 頁，這就會變得很低效  但如果書有「目錄」，你只要先查目錄找到該章節的頁碼就能直接翻到對應的頁數（像是直接定位到索引值 Index）這樣搜尋就會變得非常快！   Hash Table就像是幫資料加">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://zongda617.github.io/2025/09/17/Hash-Table/hash_table.png">
+<meta property="og:image" content="https://zongda617.github.io/2025/09/17/Hash-Table/undefined">
+<meta property="og:image" content="https://zongda617.github.io/2025/09/17/Hash-Table/1.jpg">
+<meta property="og:image" content="https://zongda617.github.io/2025/09/17/Hash-Table/2.gif">
 <meta property="article:published_time" content="2025-09-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-09-17T05:55:59.006Z">
+<meta property="article:modified_time" content="2025-09-17T09:35:23.326Z">
 <meta property="article:author" content="李宗達">
 <meta property="article:tag" content="Hash Table">
 <meta property="article:tag" content="Hash Function">
 <meta property="article:tag" content="Collision">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://zongda617.github.io/2025/09/17/Hash-Table/hash_table.png">
+<meta name="twitter:image" content="https://zongda617.github.io/2025/09/17/Hash-Table/undefined">
   
   
   
@@ -225,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k words
+          1.3k words
         
       </span>
     
@@ -236,7 +238,7 @@
         
         
         
-          10 mins
+          12 mins
         
       </span>
     
@@ -278,51 +280,44 @@
             
               <div class="markdown-body">
                 
-                <img src="/2025/09/17/Hash-Table/hash_table.png" class="">
-<h1 id="為什麼需要-Hash-Table？"><a href="#為什麼需要-Hash-Table？" class="headerlink" title="為什麼需要 Hash Table？"></a>為什麼需要 Hash Table？</h1><p>想像一下，你要在一本電話簿裡找「John Smith 的電話號碼是多少？」<br>如果電話簿只是按照登錄順序存放（像是一張普通的清單 Array），<br>你可能要從頭開始一個一個比對名字，直到找到 John Smith。<br>當電話簿只有 10 個名字還好，但如果有 1 萬個人呢？那就會變得非常慢。  </p>
-<p>這時候，<strong>Hash Table（雜湊表）</strong> 就登場了！<br>它就像是一個「超快速的電話簿索引系統」，<br>能讓我們在幾乎 <strong>瞬間</strong> 找到對應的電話號碼，而不需要一個一個比。  </p>
-<h2 id="什麼是-Hash-Table？"><a href="#什麼是-Hash-Table？" class="headerlink" title="什麼是 Hash Table？"></a>什麼是 Hash Table？</h2><p><strong>Hash Table（雜湊表）</strong> 是一種用來快速存取資料的資料結構。<br>它的核心概念是：  </p>
+                <p>想像一下，你要在一本厚厚的書裡找「第十章節的內容是什麼？」<br>如果書沒有目錄（就像一個普通的清單 Array）<br>你只能一頁一頁翻，直到翻到第十章節，這樣搜尋速度非常慢<br>當書只有 10 頁還好，但如果有 1000 頁，這就會變得很低效 </p>
+<p>但如果書有「目錄」，你只要先查目錄找到該章節的頁碼<br>就能直接翻到對應的頁數（像是直接定位到索引值 Index）<br>這樣搜尋就會變得非常快！  </p>
+<p><strong>Hash Table</strong>就像是幫資料加上一個「目錄」，<br>讓你能快速跳到正確的位置，而不需要一個一個比對。</p>
+<h2 id="什麼是-Hash-Table？"><a href="#什麼是-Hash-Table？" class="headerlink" title="什麼是 Hash Table？"></a>什麼是 Hash Table？</h2><p style="text-align:center">
+  <img src="/2025/09/17/Hash-Table/undefined"  alt="hash_table" style="width:250px; height:auto;">
+</p>
+
+<p>**Hash Table（雜湊表）**是一種用來快速存取資料的資料結構。<br>它的核心概念是：  </p>
 <ul>
 <li>每一筆資料都有一個 <strong>Key（鑰匙）</strong>。  </li>
-<li>透過 <strong>Hash Function（雜湊函數）</strong>，這個 Key 會被轉換成一個「索引值」。  </li>
-<li>這個索引值就告訴我們，資料要放在哪個位置（Bucket&#x2F;抽屜）。<br>這樣一來，當我們想要存取某筆資料時，<br>只要用同樣的 Key 再跑一次雜湊函數，就能 <strong>直接跳到正確的位置</strong>，幾乎不需要搜尋。</li>
+<li>透過 <strong>Hash Function（雜湊函數）</strong>，這個 <code>Key</code> 會被轉換成一個「索引值」。  </li>
+<li>這個索引值就告訴我們，資料要放在哪個位置（<code>Bucket</code>）。<br>這樣一來，當我們想要存取某筆資料時，<br>只要用同樣的 <code>Key</code> 再跑一次雜湊函數，就能 <strong>直接跳到正確的位置</strong>，幾乎不需要搜尋。</li>
 </ul>
-<h3 id="生活比喻"><a href="#生活比喻" class="headerlink" title="生活比喻"></a>生活比喻</h3><p>把 Hash Table 想像成一間旅館：  </p>
+<h3 id="生活比喻"><a href="#生活比喻" class="headerlink" title="生活比喻"></a>生活比喻</h3><p>把 <strong>Hash Table</strong> 想像成一間超市：  </p>
 <ol>
-<li>每位客人（資料）有一張房卡（Key）。  </li>
-<li>櫃台的電腦會用「雜湊函數」算出客人要住的房號（Index）。  </li>
-<li>客人拿到房號後，直接去房間就能找到自己要的地方。</li>
+<li>你手上有一樣商品（<code>Key</code>），例如「牛奶」、「餅乾」或「牛肉」。  </li>
+<li>超市的系統會用「<strong>雜湊函數（Hash Function）</strong>」計算出它該放在哪個區域（<code>Index</code>）。  </li>
+<li>商品就會被放到對應的貨架區（<code>Bucket</code>），像是乳製品區、零食區或肉類區。</li>
 </ol>
-<h2 id="Hash-Function（雜湊函數）"><a href="#Hash-Function（雜湊函數）" class="headerlink" title="Hash Function（雜湊函數）"></a>Hash Function（雜湊函數）</h2><p>要讓 Hash Table 運作，最重要的就是 <strong>Hash Function（雜湊函數）</strong>。<br>它是一個「公式」或「演算法」，用來把 Key 轉換成一個 <strong>索引值（Index）</strong>，<br>決定資料要放在哪個位置。</p>
-<h3 id="Hash-Function-應該具備："><a href="#Hash-Function-應該具備：" class="headerlink" title="Hash Function 應該具備："></a>Hash Function 應該具備：</h3><ol>
-<li><strong>計算速度快</strong> → 不能太複雜。  </li>
-<li><strong>分布平均</strong> → 資料不要都集中在某些位置，否則容易發生衝突。  </li>
-<li><strong>相同的 Key 必須得到相同的結果</strong> → 才能正確找到資料。</li>
+<h2 id="Hash-Function（雜湊函數）"><a href="#Hash-Function（雜湊函數）" class="headerlink" title="Hash Function（雜湊函數）"></a>Hash Function（雜湊函數）</h2><p>要讓 <strong>Hash Table</strong> 運作，最重要的就是 <strong>Hash Function（雜湊函數）</strong><br>它是一個「公式」或「演算法」，用來把 <code>Key </code>轉換成一個 <strong>索引值（Index）</strong><br>決定資料要放在哪個位置。<br><strong>Hash Function</strong> 應該具備：</p>
+<ol>
+<li><strong>計算速度快</strong> → 不能太複雜</li>
+<li><strong>分布平均</strong> → 資料不要都集中在某些位置，否則容易發生衝突 </li>
+<li><strong>相同的 Key 必須得到相同的結果</strong> → 才能正確找到資料</li>
 </ol>
 <h3 id="常見的-Hash-Function"><a href="#常見的-Hash-Function" class="headerlink" title="常見的 Hash Function"></a>常見的 Hash Function</h3><p>以下是一些常見的雜湊函數設計方法：</p>
 <ol>
 <li><p><strong>除法取餘數法（Division Method）</strong></p>
-<ul>
-<li>最簡單常見的方法：  <figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss"><span class="hljs-built_in">h</span>(<span class="hljs-built_in">key</span>) = <span class="hljs-built_in">key</span> % m<br></code></pre></td></tr></table></figure></li>
-<li><code>m</code> 通常選擇質數，能讓資料分布更平均。  </li>
-<li>例子：<code>12345 % 10 = 5</code></li>
-</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">// mod =取餘數<br>// m = 總長度<br>index = key mod m<br></code></pre></td></tr></table></figure>
+<p>就像超市有 m 個分區，依照「商品編號 % m」來決定放哪裡<br>例子：商品編號 12345 → 12345 % 10 &#x3D; 5 → 放到第 5 區</p>
 </li>
 <li><p><strong>乘法法（Multiplication Method）</strong></p>
-<ul>
-<li>利用一個 0 &lt; A &lt; 1 的常數，計算公式：  <figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss"><span class="hljs-built_in">h</span>(<span class="hljs-built_in">key</span>) = <span class="hljs-built_in">floor</span>( m * ( (<span class="hljs-built_in">key</span> * A) % <span class="hljs-number">1</span> ) )<br></code></pre></td></tr></table></figure></li>
-<li>好處：對 m 的選擇不敏感，分布更隨機。</li>
-</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">// A = 0~1 之間的常數<br>// m = 總長度<br>// floor = 向下取整數<br>index = floor(m * (k * A mod 1))<br></code></pre></td></tr></table></figure>
+<p>想像店員用一個隱藏的比例常數 A，先把商品編號乘上 A，<br>取出小數部分，再放大到超市分區數 m，決定放到哪個區域<br>例子：商品編號 12345，計算後可能被分到第 7 區</p>
 </li>
 <li><p><strong>字串雜湊（String Hashing）</strong></p>
-<ul>
-<li>常用於把文字（例如名字、單字）轉換成數字：  <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">h</span>(s) = (s[<span class="hljs-number">0</span>] * p^<span class="hljs-number">0</span> + s[<span class="hljs-number">1</span>] * p^<span class="hljs-number">1</span> + ... + s[n-<span class="hljs-number">1</span>] * p^(n-<span class="hljs-number">1</span>)) % m<br></code></pre></td></tr></table></figure></li>
-<li>其中 p 通常取 31 或 131，<code>m</code> 是一個大的質數。  </li>
-<li>例子：  <ul>
-<li>“abc” → <code>97*31^0 + 98*31^1 + 99*31^2</code></li>
-</ul>
-</li>
-</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">// s[i] = 第 i 個字元的 ASCII/Unicode 數值<br>// p = 常數 <br>// m = 總長度<br>index = (s[0]*p^0 + s[1]*p^1 + ... + s[n-1]*p^(n-1)) mod m<br></code></pre></td></tr></table></figure>
+<p>當商品名字是字串（例如「牛奶」、「餅乾」），<br>我們先把每個字元轉成數字，再依照公式算出在哪個分區。<br>例子：”abc” → 97<em>p^0 + 98</em>p^1 + 99*p^2 → 對 m 取餘數 → 分到某個區域。</p>
 </li>
 </ol>
 <h2 id="碰撞（Collision）"><a href="#碰撞（Collision）" class="headerlink" title="碰撞（Collision）"></a>碰撞（Collision）</h2><p>雖然 Hash Function 能幫我們把資料分配到不同位置，<br>但有時候 <strong>不同的 Key 可能算出相同的索引值</strong>，這種情況就叫做 <strong>碰撞（Collision）</strong>。</p>
@@ -333,12 +328,16 @@
 <li>學號 <code>54325 % 10 = 5</code></li>
 </ul>
 <p>這兩筆資料都要放到第 5 號位置，這就是碰撞。</p>
-<h3 id="常見解決方法"><a href="#常見解決方法" class="headerlink" title="常見解決方法"></a>常見解決方法</h3><h4 id="1-鏈結法（Chaining）"><a href="#1-鏈結法（Chaining）" class="headerlink" title="1. 鏈結法（Chaining）"></a>1. 鏈結法（Chaining）</h4><ul>
+<h3 id="常見解決方法"><a href="#常見解決方法" class="headerlink" title="常見解決方法"></a>常見解決方法</h3><h4 id="1-鏈結法（Chaining）"><a href="#1-鏈結法（Chaining）" class="headerlink" title="1. 鏈結法（Chaining）"></a>1. 鏈結法（Chaining）</h4><img src="/2025/09/17/Hash-Table/1.jpg" class="">
+<p>Source：<a target="_blank" rel="noopener" href="https://pumpkinprogrammerdotcom4.wordpress.com/tag/linked-list/">Pumpkin Programmer</a></p>
+<ul>
 <li>每個位置（Bucket）不只放一筆資料，而是放一個「鏈結串列」。  </li>
 <li>碰撞時，把新的資料加到串列裡。</li>
 </ul>
 <p>優點：簡單易懂，不怕資料增加。<br>缺點：如果太多碰撞，搜尋效率會變慢。</p>
-<h4 id="2-開放定址法（Open-Addressing）"><a href="#2-開放定址法（Open-Addressing）" class="headerlink" title="2. 開放定址法（Open Addressing）"></a>2. 開放定址法（Open Addressing）</h4><ul>
+<h4 id="2-開放定址法（Open-Addressing）"><a href="#2-開放定址法（Open-Addressing）" class="headerlink" title="2. 開放定址法（Open Addressing）"></a>2. 開放定址法（Open Addressing）</h4><img src="/2025/09/17/Hash-Table/2.gif" class="">
+<p>Source：<a target="_blank" rel="noopener" href="https://hackmd.io/@SupportCoding/hashTable">Open Addressing</a></p>
+<ul>
 <li>如果原本的位置被佔了，就找下一個空位放。  </li>
 <li>常見策略：<ul>
 <li><strong>線性探測（Linear Probing）</strong>：往後一格一格找。  </li>
@@ -392,6 +391,10 @@
 </ul>
 </li>
 </ol>
+<h2 id="Hash-Table相關題目"><a href="#Hash-Table相關題目" class="headerlink" title="Hash Table相關題目"></a>Hash Table相關題目</h2><p>學會了 Hash Table 的基本概念之後，可以透過實戰題目來加深理解。<br>以下是一道經典題目：</p>
+<ul>
+<li><a href="https://zongda617.github.io/2025/09/15/LeetCode-1-Two-Sum/">LeetCode 1. Two Sum</a><br>使用 Hash Table 可以在 <strong>O(n)</strong> 的時間內解決，<br>是新手練習 Hash Table 的最佳入門題。</li>
+</ul>
 
                 
               </div>
