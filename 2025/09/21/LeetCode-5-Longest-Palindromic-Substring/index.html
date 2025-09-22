@@ -1,0 +1,657 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/Da.png">
+  <link rel="icon" href="/img/Da.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="李宗達">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="LeetCode 5 - Longest Palindromic Substring👉 題目連結 📖題目說明 Given a string s, return the longest palindromic substring in s.給定一個字串 s，傳回 s 中最長的回文子字串。迴文是指正著念和反著念都相同，例如: “abcba”,”ravcvar”   範例輸入與輸出Example 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode 5 - Longest Palindromic Substring">
+<meta property="og:url" content="https://zongda617.github.io/2025/09/21/LeetCode-5-Longest-Palindromic-Substring/index.html">
+<meta property="og:site_name" content="ZongDa&#39;s website">
+<meta property="og:description" content="LeetCode 5 - Longest Palindromic Substring👉 題目連結 📖題目說明 Given a string s, return the longest palindromic substring in s.給定一個字串 s，傳回 s 中最長的回文子字串。迴文是指正著念和反著念都相同，例如: “abcba”,”ravcvar”   範例輸入與輸出Example 1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-09-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-09-22T07:12:15.989Z">
+<meta property="article:author" content="李宗達">
+<meta property="article:tag" content="LeetCode">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>LeetCode 5 - Longest Palindromic Substring - ZongDa&#39;s website</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"zongda617.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":80,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":false,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":false,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ZongDa&#39;s website</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/IMG1.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="LeetCode 5 - Longest Palindromic Substring"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-09-21 00:00" pubdate>
+          September 21, 2025 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          978 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          9 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">LeetCode 5 - Longest Palindromic Substring</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="LeetCode-5-Longest-Palindromic-Substring"><a href="#LeetCode-5-Longest-Palindromic-Substring" class="headerlink" title="LeetCode 5 - Longest Palindromic Substring"></a>LeetCode 5 - Longest Palindromic Substring</h1><p>👉 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-palindromic-substring/description/">題目連結</a></p>
+<h2 id="📖題目說明"><a href="#📖題目說明" class="headerlink" title="📖題目說明"></a>📖題目說明</h2><blockquote>
+<p>Given a string <code>s</code>, return the longest palindromic substring in <code>s</code>.<br>給定一個字串 s，傳回 s 中最長的<strong>回文子字串</strong>。<br>迴文是指正著念和反著念都相同，例如: “abcba”,”ravcvar”</p>
+</blockquote>
+<hr>
+<h2 id="範例輸入與輸出"><a href="#範例輸入與輸出" class="headerlink" title="範例輸入與輸出"></a>範例輸入與輸出</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><blockquote>
+<p><strong>Input</strong>: s &#x3D; “babad”<br><strong>Output</strong>: “bab”<br><strong>Explanation</strong>: “aba” is also a valid answer.</p>
+</blockquote>
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><blockquote>
+<p><strong>Input</strong>: s &#x3D; “cbbd”<br><strong>Output</strong>: “bb”</p>
+</blockquote>
+<hr>
+<h2 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h2><ul>
+<li><code>1 &lt;= s.length &lt;= 1000</code></li>
+<li><code>s</code> 僅由數字和英文字母組成</li>
+</ul>
+<hr>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="暴力解"><a href="#暴力解" class="headerlink" title="暴力解"></a>暴力解</h3><p><strong>解題想法</strong>: 直接遍歷所有子字串並判斷是否為回文<br><strong>時間複雜度</strong>: O(n^3)<br><strong>空間複雜度</strong>: O(n)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">longestPalindrome</span>(<span class="hljs-params">self, s</span>):<br>        length = <span class="hljs-built_in">len</span>(s)<br>        goals = <span class="hljs-string">&#x27;&#x27;</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(length):<br>            <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(s)-i &lt;= <span class="hljs-built_in">len</span>(goals):<br>                <span class="hljs-keyword">return</span> goals<br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(i,length):<br>                sub = s[i:j+<span class="hljs-number">1</span>]<br>                rsub = sub[::-<span class="hljs-number">1</span>]<br>                <span class="hljs-keyword">if</span> sub == rsub <span class="hljs-keyword">and</span>  <span class="hljs-built_in">len</span>(sub) &gt; <span class="hljs-built_in">len</span>(goals):<br>                    goals = sub<br>        <span class="hljs-keyword">return</span> goals<br></code></pre></td></tr></table></figure>
+
+<h3 id="動態規劃（DP）"><a href="#動態規劃（DP）" class="headerlink" title="動態規劃（DP）"></a>動態規劃（DP）</h3><p><strong>解題想法</strong>: 動態規劃的關鍵在於利用「回文可以往外擴張」的特性，從短到長判斷是否為回文字串，如果子串 <code>s[i+1..j-1]</code> 已經是回文，而且兩端字元 <code>s[i]</code> 和 <code>s[j]</code> 相同，那麼整段 <code>s[i..j]</code> 也是回文，於是我們用 <code>dp[i][j]</code> 表示子串是否為回文，先把長度 1 與 2 的情況當作基底，再依序擴展到更長的子串，計算時按照長度由小到大，確保 <code>dp[i+1][j-1]</code> 先算好，過程中持續更新最長回文的位置與長度，最後得到答案<br><strong>時間複雜度</strong>: O(n²)<br><strong>空間複雜度</strong>: O(n²)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">longestPalindrome</span>(<span class="hljs-params">self, s</span>):<br>        length = <span class="hljs-built_in">len</span>(s)<br>        <span class="hljs-keyword">if</span> length ==<span class="hljs-number">1</span>:<br>            <span class="hljs-keyword">return</span> s<br>        dp = [[<span class="hljs-literal">False</span>]*length <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(length)]<br>        start,max_length = <span class="hljs-number">0</span>,<span class="hljs-number">1</span><br><br>        <span class="hljs-comment">#長度1 自己本身就是回文</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(length):<br>            dp[i][i]=<span class="hljs-literal">True</span><br>            start,max_length = <span class="hljs-number">0</span>,<span class="hljs-number">1</span><br><br>        <span class="hljs-comment">#長度2 檢查兩兩是否相同</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(length-<span class="hljs-number">1</span>):<br>            <span class="hljs-keyword">if</span> s[i]==s[i+<span class="hljs-number">1</span>]:<br>                dp[i][i+<span class="hljs-number">1</span>]= <span class="hljs-literal">True</span><br>                start,max_length = i,<span class="hljs-number">2</span><br>        <br>        <span class="hljs-comment">#長度3以上</span><br>        <span class="hljs-keyword">for</span> L <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">3</span>,length+<span class="hljs-number">1</span>):<br>            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,length-L+<span class="hljs-number">1</span>):<br>                j = L+i-<span class="hljs-number">1</span><br>                <span class="hljs-keyword">if</span> s[i]==s[j] <span class="hljs-keyword">and</span>  dp[i+<span class="hljs-number">1</span>][j-<span class="hljs-number">1</span>]:<br>                    dp[i][j] = <span class="hljs-literal">True</span><br>                    <span class="hljs-keyword">if</span> L&gt;max_length:<br>                        start,max_length = i,L<br>        <span class="hljs-keyword">return</span> s[start:start + max_length]<br></code></pre></td></tr></table></figure>
+
+<h3 id="中心擴展"><a href="#中心擴展" class="headerlink" title="中心擴展"></a>中心擴展</h3><p><strong>解題想法</strong>: 每個回文都有一個「中心」，可能在某個字元上（奇長）或兩個字元之間（偶長），對於字串中每個位置，我們各自把它當成這兩種中心，從中心同時向左、向右比對字元，只要還相等就繼續擴張，一旦越界或左右不同就停止，當下覆蓋到的區間就是以該中心能形成的最長回文字串<br><strong>時間複雜度</strong>: O(n²)<br><strong>空間複雜度</strong>: O(1)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">longestPalindrome</span>(<span class="hljs-params">self, s</span>):<br>        length = <span class="hljs-built_in">len</span>(s)<br>        start = end = <span class="hljs-number">0</span><br><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">expand</span>(<span class="hljs-params">l, r</span>):<br>            <span class="hljs-keyword">while</span> l&gt;=<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> r&lt;length <span class="hljs-keyword">and</span> s[l]==s[r]:<br>                l-=<span class="hljs-number">1</span><br>                r+=<span class="hljs-number">1</span><br>            <span class="hljs-keyword">return</span> l+<span class="hljs-number">1</span>,r-<span class="hljs-number">1</span> <br>        <br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(length):<br>            l1,r1 = expand(i,i) <span class="hljs-comment">#奇數長度</span><br>            l2,r2 = expand(i,i+<span class="hljs-number">1</span>) <span class="hljs-comment">#偶數長度</span><br>            <span class="hljs-keyword">if</span> r1 - l1 &gt; end - start:<br>                start, end = l1, r1<br>            <span class="hljs-keyword">if</span> r2 - l2 &gt; end - start:<br>                start, end = l2, r2<br>        <span class="hljs-keyword">return</span> s[start:end+<span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure>
+
+<h3 id="馬拉車演算法（Manacher’s-algorithm）"><a href="#馬拉車演算法（Manacher’s-algorithm）" class="headerlink" title="馬拉車演算法（Manacher’s algorithm）"></a>馬拉車演算法（Manacher’s algorithm）</h3><p><strong>解題想法</strong>: 把奇數與偶數回文統一處理，先在字元之間插入分隔符（如 <code>#</code>）形成新字串，然後一路從左掃到右，同時維護目前「最右邊能覆蓋到的回文」及其中心（<code>right</code>,<code>center</code>），並為每個位置記一個半徑 <code>P[i]</code> 表示以它為中心能向外對稱匹配多遠，當走到位置 <code>i</code> 時，先利用它相對於 <code>center</code> 的鏡像點的半徑，直接得到一個不會超過 <code>right</code> 的最低半徑起點，只有在可能超出 <code>right</code> 的邊界時才繼續真正比對擴張，若擴得更右就把 <code>center</code>、<code>right</code> 往前推，因為大部分位置都能靠鏡像省掉重複比較，每個字元最多被比較兩次，整體就變成線性時間，最後從 <code>P</code> 的最大半徑反推回原字串的位置，即是最長回文。<br><strong>時間複雜度</strong>: O(n)<br><strong>空間複雜度</strong>: O(n)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">longestPalindrome</span>(<span class="hljs-params">self, s</span>):<br>        t = <span class="hljs-string">&quot;#&quot;</span> + <span class="hljs-string">&quot;#&quot;</span>.join(s) + <span class="hljs-string">&quot;#&quot;</span><br>        n = <span class="hljs-built_in">len</span>(t)<br>        P = [<span class="hljs-number">0</span>] * n<br>        center = right = <span class="hljs-number">0</span><br><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n):<br>            mirror = <span class="hljs-number">2</span> * center - i<br>            <span class="hljs-keyword">if</span> i &lt; right:<br>                P[i] = <span class="hljs-built_in">min</span>(right - i, P[mirror])<br>            l, r = i - P[i] - <span class="hljs-number">1</span>, i + P[i] + <span class="hljs-number">1</span><br>            <span class="hljs-keyword">while</span> l &gt;= <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> r &lt; n <span class="hljs-keyword">and</span> t[l] == t[r]:<br>                P[i] += <span class="hljs-number">1</span><br>                l -= <span class="hljs-number">1</span><br>                r += <span class="hljs-number">1</span><br>            <span class="hljs-keyword">if</span> i + P[i] &gt; right:<br>                center, right = i, i + P[i]<br><br>        max_len = <span class="hljs-built_in">max</span>(P)<br>        idx = P.index(max_len)<br>        start = (idx - max_len) // <span class="hljs-number">2</span><br>        <span class="hljs-keyword">return</span> s[start:start + max_len]<br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/LeetCode/" class="category-chain-item">LeetCode</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/LeetCode/" class="print-no-link">#LeetCode</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>LeetCode 5 - Longest Palindromic Substring</div>
+      <div>https://zongda617.github.io/2025/09/21/LeetCode-5-Longest-Palindromic-Substring/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>李宗達</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>September 21, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/09/22/Manachers-Algorithm/" title="馬拉車演算法(Manacher&#39;s Algorithm)">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">馬拉車演算法(Manacher&#39;s Algorithm)</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/09/19/LeetCode-4-Median-of-Two-Sorted-Arrays/" title="LeetCode 4 - Median of Two Sorted Arrays">
+                        <span class="hidden-mobile">LeetCode 4 - Median of Two Sorted Arrays</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <p>© 2025 ZongDa Li</p> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
