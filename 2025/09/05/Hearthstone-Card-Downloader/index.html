@@ -19,12 +19,12 @@
   <meta name="author" content="李宗達">
   <meta name="keywords" content="">
   
-    <meta name="description" content="爐石戰記英雄戰場卡片下載器：完整教學與介紹  📌 專案簡介《爐石戰記：英雄戰場》每次改版或換季，卡片池都會更新。不過官方網站的卡片資源常常不完整，缺少：      金卡圖片   特殊配件卡  為了解決這個問題，我開發了 英雄戰場卡片下載器，利用 暴雪 API 批次下載卡片，並提供查詢功能，讓玩家輕鬆取得完整的卡面。   👉 立即體驗 Demo 網站👉 GitHub 原始碼  ✨ 功能特色 �">
+    <meta name="description" content="爐石戰記英雄戰場卡片下載器：完整教學與介紹  📌 專案簡介《爐石戰記：英雄戰場》每次改版或換季，卡片池都會更新。不過官方網站的卡片資源常常不完整，缺少：      金卡圖片   特殊配件卡  為了解決這個問題，我開發了 英雄戰場卡片下載器，利用 暴雪 API 批次下載卡片，並提供查詢功能，讓玩家輕鬆取得完整的卡面。    ✨ 功能特色 🖼 一次下載全部卡片：免逐一點擊，一鍵批次下載   🎴">
 <meta property="og:type" content="article">
 <meta property="og:title" content="爐石卡牌資料抓取工具">
 <meta property="og:url" content="https://zongda617.github.io/2025/09/05/Hearthstone-Card-Downloader/index.html">
 <meta property="og:site_name" content="ZongDa&#39;s website">
-<meta property="og:description" content="爐石戰記英雄戰場卡片下載器：完整教學與介紹  📌 專案簡介《爐石戰記：英雄戰場》每次改版或換季，卡片池都會更新。不過官方網站的卡片資源常常不完整，缺少：      金卡圖片   特殊配件卡  為了解決這個問題，我開發了 英雄戰場卡片下載器，利用 暴雪 API 批次下載卡片，並提供查詢功能，讓玩家輕鬆取得完整的卡面。   👉 立即體驗 Demo 網站👉 GitHub 原始碼  ✨ 功能特色 �">
+<meta property="og:description" content="爐石戰記英雄戰場卡片下載器：完整教學與介紹  📌 專案簡介《爐石戰記：英雄戰場》每次改版或換季，卡片池都會更新。不過官方網站的卡片資源常常不完整，缺少：      金卡圖片   特殊配件卡  為了解決這個問題，我開發了 英雄戰場卡片下載器，利用 暴雪 API 批次下載卡片，並提供查詢功能，讓玩家輕鬆取得完整的卡面。    ✨ 功能特色 🖼 一次下載全部卡片：免逐一點擊，一鍵批次下載   🎴">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zongda617.github.io/2025/09/05/Hearthstone-Card-Downloader/1.png">
 <meta property="og:image" content="https://zongda617.github.io/2025/09/05/Hearthstone-Card-Downloader/3.png">
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://zongda617.github.io/2025/09/05/Hearthstone-Card-Downloader/2.png">
 <meta property="og:image" content="https://zongda617.github.io/2025/09/05/Hearthstone-Card-Downloader/6.png">
 <meta property="article:published_time" content="2025-09-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-09-09T02:04:51.069Z">
+<meta property="article:modified_time" content="2025-09-23T16:15:05.204Z">
 <meta property="article:author" content="李宗達">
 <meta property="article:tag" content="遊戲工具">
 <meta property="article:tag" content="Hearthstone Battlegrounds">
@@ -233,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          586 words
+          557 words
         
       </span>
     
@@ -294,7 +294,6 @@
 <li>特殊配件卡</li>
 </ul>
 <p>為了解決這個問題，我開發了 <strong>英雄戰場卡片下載器</strong>，利用 <strong>暴雪 API</strong> 批次下載卡片，並提供查詢功能，讓玩家輕鬆取得完整的卡面。  </p>
-<p>👉 <a target="_blank" rel="noopener" href="https://hearthstone-card-download.onrender.com/">立即體驗 Demo 網站</a><br>👉 <a target="_blank" rel="noopener" href="https://github.com/Zongda617/hearthstone_Card_download">GitHub 原始碼</a></p>
 <hr>
 <h2 id="✨-功能特色"><a href="#✨-功能特色" class="headerlink" title="✨ 功能特色"></a>✨ 功能特色</h2><ul>
 <li>🖼 <strong>一次下載全部卡片</strong>：免逐一點擊，一鍵批次下載  </li>
@@ -338,8 +337,7 @@
 <h2 id="📂專案結構"><a href="#📂專案結構" class="headerlink" title="📂專案結構"></a>📂專案結構</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">hearthstone_Card_download/<br>│── app.py              # Flask 主程式<br>│── static/             # 前端靜態檔案 (CSS/JS)<br>│── templates/          # HTML 模板<br>│── requirements.txt    # 需要的 Python 套件<br>└── utils/              # API 與下載工具函式<br></code></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>這個工具能幫助《爐石戰記：英雄戰場》的玩家快速下載完整卡片資源，特別是官方網站缺漏的部分，對於想做 卡池分析、戰略研究、內容創作者 都非常實用。</p>
-<p>👉 歡迎試用: <a target="_blank" rel="noopener" href="https://hearthstone-card-download.onrender.com/">爐石卡片下載器</a><br>👉 原始碼在這裡: <a target="_blank" rel="noopener" href="https://github.com/Zongda617/hearthstone_Card_download">GitHub Repo</a></p>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>這個工具能幫助《爐石戰記：英雄戰場》的玩家快速下載完整卡片資源，特別是官方網站缺漏的部分，對於想做 卡池分析、戰略研究、內容創作者 都非常實用</p>
 
                 
               </div>
