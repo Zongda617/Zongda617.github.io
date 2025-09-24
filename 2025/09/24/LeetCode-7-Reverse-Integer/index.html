@@ -19,22 +19,22 @@
   <meta name="author" content="李宗達">
   <meta name="keywords" content="">
   
-    <meta name="description" content="LeetCode 6 - Zigzag Conversion👉 題目連結 📖題目說明 The string &quot;PAYPALISHIRING&quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed">
+    <meta name="description" content="LeetCode 7 - Reverse Integer👉 題目連結 📖題目說明 Given a signed 32-bit integer x, return x with its digits reversed.If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 -">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 6 - Zigzag Conversion">
-<meta property="og:url" content="https://zongda617.github.io/2025/09/23/LeetCode-6-Zigzag-Conversion/index.html">
+<meta property="og:title" content="LeetCode 7 - Reverse Integer">
+<meta property="og:url" content="https://zongda617.github.io/2025/09/24/LeetCode-7-Reverse-Integer/index.html">
 <meta property="og:site_name" content="ZongDa&#39;s website">
-<meta property="og:description" content="LeetCode 6 - Zigzag Conversion👉 題目連結 📖題目說明 The string &quot;PAYPALISHIRING&quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed">
+<meta property="og:description" content="LeetCode 7 - Reverse Integer👉 題目連結 📖題目說明 Given a signed 32-bit integer x, return x with its digits reversed.If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 -">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-09-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-09-23T11:55:18.889Z">
+<meta property="article:published_time" content="2025-09-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-09-24T02:52:32.873Z">
 <meta property="article:author" content="李宗達">
 <meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>LeetCode 6 - Zigzag Conversion - ZongDa&#39;s website</title>
+  <title>LeetCode 7 - Reverse Integer - ZongDa&#39;s website</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LeetCode 6 - Zigzag Conversion"></span>
+            <span id="subtitle" data-typed-text="LeetCode 7 - Reverse Integer"></span>
           
         </div>
 
@@ -209,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-09-23 00:00" pubdate>
-          September 23, 2025 am
+        <time datetime="2025-09-24 00:00" pubdate>
+          September 24, 2025 am
         </time>
       </span>
     
@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          509 words
+          462 words
         
       </span>
     
@@ -232,7 +232,7 @@
         
         
         
-          5 mins
+          4 mins
         
       </span>
     
@@ -269,56 +269,49 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LeetCode 6 - Zigzag Conversion</h1>
+            <h1 id="seo-header">LeetCode 7 - Reverse Integer</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="LeetCode-6-Zigzag-Conversion"><a href="#LeetCode-6-Zigzag-Conversion" class="headerlink" title="LeetCode 6 - Zigzag Conversion"></a>LeetCode 6 - Zigzag Conversion</h1><p>👉 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/zigzag-conversion/description/">題目連結</a></p>
+                <h1 id="LeetCode-7-Reverse-Integer"><a href="#LeetCode-7-Reverse-Integer" class="headerlink" title="LeetCode 7 - Reverse Integer"></a>LeetCode 7 - Reverse Integer</h1><p>👉 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/reverse-integer/description/">題目連結</a></p>
 <h2 id="📖題目說明"><a href="#📖題目說明" class="headerlink" title="📖題目說明"></a>📖題目說明</h2><blockquote>
-<p>The string <code>&quot;PAYPALISHIRING&quot;</code> is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p>
+<p>Given a signed 32-bit integer <code>x</code>, return <code>x</code> with its digits reversed.<br>If reversing <code>x</code> causes the value to go outside the signed 32-bit integer range <code>[-231, 231 - 1]</code>, then return <code>0</code>.<br>Assume the environment does not allow you to store 64-bit integers (signed or unsigned).</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">P   A   H   N<br>A P L S I I G<br>Y   I   R<br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>And then read line by line: <code>&quot;PAHNAPLSIIGYIR&quot;</code><br>Write the code that will take a string and make this conversion given a number of rows:</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function">string <span class="hljs-title">convert</span><span class="hljs-params">(string s, <span class="hljs-type">int</span> numRows)</span></span>;<br></code></pre></td></tr></table></figure>
-
-<p>給定一個字串 <code>s</code> 和一個整數 <code>numRows</code>，要把字串按照「<strong>Z字形</strong>」方式排列，再逐行讀出形成新的字串<br>排列規則:</p>
-<ul>
-<li>從上往下填滿第一列到第 <code>numRows</code> 列</li>
-<li>到最底列後，往斜上方移動，直到回到第一列</li>
-<li>重複上述過程直到字串填完</li>
-<li>最後把每一列的字元依序拼接起來</li>
-</ul>
+<p>給定一個 32 位元帶號整數 <code>x</code>，將它的數字反轉後回傳<br>如果反轉後超出範圍 <code>[-2^31, 2^31 - 1]</code>，就回傳 <code>0</code><br>不允許使用超過 64 位的整數存放。</p>
 <hr>
 <h2 id="範例輸入與輸出"><a href="#範例輸入與輸出" class="headerlink" title="範例輸入與輸出"></a>範例輸入與輸出</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><blockquote>
-<p><strong>Input</strong>: s &#x3D; “PAYPALISHIRING”, numRows &#x3D; 3<br><strong>Output</strong>: “PAHNAPLSIIGYIR”</p>
+<p><strong>Input</strong>: x &#x3D; 123<br><strong>Output</strong>: 321</p>
 </blockquote>
 <h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><blockquote>
-<p><strong>Input</strong>: s &#x3D; “PAYPALISHIRING”, numRows &#x3D; 4<br><strong>Output</strong>: “PINALSIGYAHRPI”<br><strong>Explanation</strong>:<br>P     I    N<br>A   L S  I G<br>Y A   H R<br>P     I</p>
+<p><strong>Input</strong>: x &#x3D; -123<br><strong>Output</strong>: -321</p>
 </blockquote>
 <h3 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h3><blockquote>
-<p><strong>Input</strong>: s &#x3D; “A”, numRows &#x3D; 1<br><strong>Output</strong>: “A”</p>
+<p><strong>Input</strong>: x &#x3D; 120<br><strong>Output</strong>: 21</p>
 </blockquote>
 <hr>
 <h2 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h2><ul>
-<li><code>1 &lt;= s.length &lt;= 1000</code></li>
-<li><code>s</code>由英文字母（小寫和大寫）、<code>,</code>和<code>.</code>組成。</li>
-<li><code>1 &lt;= numRows &lt;= 1000</code></li>
+<li><code>-231 &lt;= x &lt;= 231 - 1</code></li>
 </ul>
 <hr>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="模擬法"><a href="#模擬法" class="headerlink" title="模擬法"></a>模擬法</h3><p><strong>解題想法</strong>:<br>這題的核心在於<strong>模擬 Z 字形</strong>的上下往返，具體做法分成以下幾步：</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="字串處理"><a href="#字串處理" class="headerlink" title="字串處理"></a>字串處理</h3><p><strong>解題想法</strong>:<br>直接把數字轉成字串處理，因為這樣反轉會非常直觀</p>
 <ol>
-<li>使用一個字典來代表每一層，<code>key</code> 為層數，<code>value</code> 為該層的字元集合</li>
-<li>設定一個變數 <code>floor</code> 來記錄當前所在的層數，並用 <code>up_down</code> 控制方向（往下或往上）</li>
-<li>遍歷整個字串，將每個字元放入對應層的 list 中，當抵達最底層或最頂層時就反轉方向</li>
-<li>最後依照層數順序，把字典裡的字元依序合併成結果字串。</li>
+<li>先判斷 <code>x</code> 是否為負數</li>
+<li>把數字轉成字串並反轉</li>
+<li>再轉回整數，補上正負號</li>
+<li>檢查是否超出 32 位範圍，若超出就回傳 <code>0</code><br>Python 本身的整數沒有 32 位溢位問題，可以直接處理大整數<br><strong>時間複雜度</strong>: O(n)，<code>n</code>表示數字的位數，主要花費在 <code>str(x)</code> 和 <code>[::-1]</code> 的操作<br><strong>空間複雜度</strong>: O(n)，因為要建立字串 <code>str(x)</code> 和反轉後的新字串</li>
 </ol>
-<p><strong>時間複雜度</strong>: O(n) 但因為字串拼接可能到O(n²)<br><strong>空間複雜度</strong>: O(n)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">convert</span>(<span class="hljs-params">self, s, numRows</span>):<br>        floor_dic = &#123;&#125;<br>        <span class="hljs-keyword">if</span> numRows==<span class="hljs-number">1</span>:<br>            <span class="hljs-keyword">return</span> s<br><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(numRows):<br>            floor_dic[i] = []<br>        <br>        up_down = <span class="hljs-number">1</span><br>        floor = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> s:<br>            floor_dic[floor].append(i)<br>            <span class="hljs-keyword">if</span> floor == numRows-<span class="hljs-number">1</span> <span class="hljs-keyword">or</span> (up_down==-<span class="hljs-number">1</span> <span class="hljs-keyword">and</span> floor==<span class="hljs-number">0</span>): <br>                up_down *= -<span class="hljs-number">1</span><br>            floor+= up_down<br>        <br>        output = <span class="hljs-string">&#x27;&#x27;</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span>  floor_dic:<br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> floor_dic [i]:<br>                    output+=j<br>        <span class="hljs-keyword">return</span>  output<br></code></pre></td></tr></table></figure>
-<h3 id="模擬法-最佳解"><a href="#模擬法-最佳解" class="headerlink" title="模擬法(最佳解)"></a>模擬法(最佳解)</h3><p><strong>解題想法</strong>: 把原本的字典結構換成 list，並且最後用 <code>&quot;&quot;.join()</code> 來合併字串<br><strong>時間複雜度</strong>: O(n) ,每個字元只會被處理一次，直接丟進對應的行<br><strong>空間複雜度</strong>: O(n) ,額外的 list 用來存放所有字元，總大小與輸入字串等長</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">convert</span>(<span class="hljs-params">self, s, numRows</span>):<br>        floor_dic = &#123;&#125;<br>        <span class="hljs-keyword">if</span> numRows==<span class="hljs-number">1</span>:<br>            <span class="hljs-keyword">return</span> s<br><br>        floor_list = [<span class="hljs-string">&quot;&quot;</span>] * numRows<br>        <br>        up_down = <span class="hljs-number">1</span><br>        floor = <span class="hljs-number">0</span><br><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> s:<br>            floor_list[floor] += i<br><br>            <span class="hljs-keyword">if</span> floor == numRows-<span class="hljs-number">1</span> <span class="hljs-keyword">or</span> (up_down==-<span class="hljs-number">1</span> <span class="hljs-keyword">and</span> floor==<span class="hljs-number">0</span>): <br>                up_down *= -<span class="hljs-number">1</span><br>            floor+= up_down<br>        <br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>.join(floor_list)<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">reverse</span>(<span class="hljs-params">self, x</span>):<br>        <span class="hljs-keyword">if</span> x&lt;<span class="hljs-number">0</span>:<br>            x*=-<span class="hljs-number">1</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span> <span class="hljs-keyword">if</span> -<span class="hljs-built_in">int</span>(<span class="hljs-built_in">str</span>(x)[::-<span class="hljs-number">1</span>]) &lt; -<span class="hljs-number">2</span>**<span class="hljs-number">31</span> <span class="hljs-keyword">else</span> -<span class="hljs-built_in">int</span>(<span class="hljs-built_in">str</span>(x)[::-<span class="hljs-number">1</span>])<br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span> <span class="hljs-keyword">if</span> <span class="hljs-built_in">int</span>(<span class="hljs-built_in">str</span>(x)[::-<span class="hljs-number">1</span>]) &gt; <span class="hljs-number">2</span>**<span class="hljs-number">31</span>-<span class="hljs-number">1</span> <span class="hljs-keyword">else</span>  <span class="hljs-built_in">int</span>(<span class="hljs-built_in">str</span>(x)[::-<span class="hljs-number">1</span>])<br></code></pre></td></tr></table></figure>
+<h3 id="數學pop-push"><a href="#數學pop-push" class="headerlink" title="數學pop &amp; push"></a>數學pop &amp; push</h3><p><strong>解題想法</strong>: 改用數學方式，逐位取出數字並組合回去</p>
+<ol>
+<li>先記錄數字的正負號。</li>
+<li>每次用 <code>%10</code> 取出最後一位數（pop）</li>
+<li>將結果往左移一位（乘 10）並加上這個數字（push）</li>
+<li>過程中檢查是否會超過 <code>2^31-1</code> 或小於 <code>-2^31</code></li>
+<li>最後補回正負號<br>這種方法比較貼近題目的考點，比用字串反轉的效率更高且更省空間<br><strong>時間複雜度</strong>: O(n) ,<code>n </code>表示數字的位數<br><strong>空間複雜度</strong>: O(1) ,只用了常數變數</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">reverse</span>(<span class="hljs-params">self, x</span>):<br>        MAX,MIN = <span class="hljs-number">2</span>**<span class="hljs-number">31</span> - <span class="hljs-number">1</span> , -<span class="hljs-number">2</span>**<span class="hljs-number">31</span><br>        sign = <span class="hljs-number">1</span> <span class="hljs-keyword">if</span> x&gt;<span class="hljs-number">0</span> <span class="hljs-keyword">else</span> -<span class="hljs-number">1</span><br>        x = <span class="hljs-built_in">abs</span>(x)<br><br>        rx =<span class="hljs-number">0</span><br>        <span class="hljs-keyword">while</span> x!=<span class="hljs-number">0</span>:<br>            last = x%<span class="hljs-number">10</span><br>            x//=<span class="hljs-number">10</span><br>            <span class="hljs-keyword">if</span> rx &gt; MAX//<span class="hljs-number">10</span>:<br>                <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>            rx = rx*<span class="hljs-number">10</span>+last<br>        <span class="hljs-keyword">return</span> rx*sign<br></code></pre></td></tr></table></figure>
+
                 
               </div>
             
@@ -363,8 +356,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LeetCode 6 - Zigzag Conversion</div>
-      <div>https://zongda617.github.io/2025/09/23/LeetCode-6-Zigzag-Conversion/</div>
+      <div>LeetCode 7 - Reverse Integer</div>
+      <div>https://zongda617.github.io/2025/09/24/LeetCode-7-Reverse-Integer/</div>
     </div>
     <div class="license-meta">
       
@@ -376,7 +369,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>September 23, 2025</div>
+          <div>September 24, 2025</div>
         </div>
       
       
@@ -408,18 +401,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/09/24/LeetCode-7-Reverse-Integer/" title="LeetCode 7 - Reverse Integer">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LeetCode 7 - Reverse Integer</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/09/22/Manachers-Algorithm/" title="馬拉車演算法(Manacher&#39;s Algorithm)">
-                        <span class="hidden-mobile">馬拉車演算法(Manacher&#39;s Algorithm)</span>
+                      <a href="/2025/09/23/LeetCode-6-Zigzag-Conversion/" title="LeetCode 6 - Zigzag Conversion">
+                        <span class="hidden-mobile">LeetCode 6 - Zigzag Conversion</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
