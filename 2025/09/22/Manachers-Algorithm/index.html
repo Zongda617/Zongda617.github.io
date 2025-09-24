@@ -39,7 +39,7 @@
 <meta property="og:image" content="https://zongda617.github.io/2025/09/22/Manachers-Algorithm/i9.png">
 <meta property="og:image" content="https://zongda617.github.io/2025/09/22/Manachers-Algorithm/i10.png">
 <meta property="article:published_time" content="2025-09-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-09-24T03:06:12.213Z">
+<meta property="article:modified_time" content="2025-09-24T03:17:54.995Z">
 <meta property="article:author" content="李宗達">
 <meta property="article:tag" content="回文子字串">
 <meta property="article:tag" content="Manacher’s Algorithm">
@@ -335,6 +335,7 @@
 <li>right &#x3D; 0 </li>
 <li>P &#x3D; [0] * 10</li>
 </ul>
+<p>圖案說明: 黃色為新擴張的範圍，綠色為已知擴張的範圍</p>
 <h4 id="i-0"><a href="#i-0" class="headerlink" title="i &#x3D; 0 (#)"></a>i &#x3D; 0 (#)</h4><img src="/2025/09/22/Manachers-Algorithm/i0.png" class="">
 <p><code>mirror</code> &#x3D; 2*0 - 0 &#x3D; 0<br><code>i &lt; right</code> 不成立，不能借用<br>嘗試擴張：左界超界，停止<br>結果：P[0] &#x3D; 0，center&#x2F;right 不變（0&#x2F;0）</p>
 <h4 id="i-1-a"><a href="#i-1-a" class="headerlink" title="i &#x3D; 1 (a)"></a>i &#x3D; 1 (a)</h4><img src="/2025/09/22/Manachers-Algorithm/i1.png" class="">
@@ -350,7 +351,7 @@
 <h4 id="i-6"><a href="#i-6" class="headerlink" title="i &#x3D; 6 (#)"></a>i &#x3D; 6 (#)</h4><img src="/2025/09/22/Manachers-Algorithm/i6.png" class="">
 <p><code>mirror</code> &#x3D; 2*5 - 6 &#x3D; 4<br><code>i &lt; right</code> 成立，可「鏡像借用」<code>index=4</code>：<br>P[6] &#x3D; min(<code>right</code> - i, P[mirror]) &#x3D; min(8 - 6, P[4]&#x3D;0) &#x3D; 0<br>擴張：左界(<code>a</code>)不等於右界(<code>b</code>)，無法擴張<br>結果：P[6] &#x3D; 0，<code>center</code>&#x2F;<code>right</code> 不變（5&#x2F;8）</p>
 <h4 id="i-7-b"><a href="#i-7-b" class="headerlink" title="i &#x3D; 7 (b)"></a>i &#x3D; 7 (b)</h4><img src="/2025/09/22/Manachers-Algorithm/i7.png" class="">
-<p><code>mirror</code> &#x3D; 2*5 - 7 &#x3D; 3<br><code>i &lt; right</code> 成立，可「鏡像借用」<code>index=3</code>：<br>P[7] &#x3D; min(8 - 7, P[3]&#x3D;3) &#x3D; 1<br>繼續擴張：下一步不等，停止<br>結果：P[7] &#x3D; 1，<code>center</code>&#x2F;<code>right</code> 不變（5&#x2F;8）</p>
+<p><code>mirror</code> &#x3D; 2*5 - 7 &#x3D; 3<br><code>i &lt; right</code> 成立，可「鏡像借用」<code>index=3</code>：<br>P[7] &#x3D; min(8 - 7, P[3]&#x3D;3) &#x3D; 1，<br>因為我們目前只知道<code>Right</code>之前的回文 因此最多只能借用<code>i</code>到<code>Right</code>的範圍<br>繼續擴張：下一步不等，停止<br>結果：P[7] &#x3D; 1，<code>center</code>&#x2F;<code>right</code> 不變（5&#x2F;8）</p>
 <h4 id="i-8"><a href="#i-8" class="headerlink" title="i &#x3D; 8 (#)"></a>i &#x3D; 8 (#)</h4><img src="/2025/09/22/Manachers-Algorithm/i8.png" class="">
 <p><code>mirror</code> &#x3D; 2*5 - 8 &#x3D; 2<br><code>i &lt; right</code> 不成立，不能借用<br>擴張：無法擴張<br>結果：P[8] &#x3D; 0，<code>center</code>&#x2F;<code>right</code> 不變（5&#x2F;8）</p>
 <h4 id="i-9-c"><a href="#i-9-c" class="headerlink" title="i &#x3D; 9 (c)"></a>i &#x3D; 9 (c)</h4><img src="/2025/09/22/Manachers-Algorithm/i9.png" class="">
