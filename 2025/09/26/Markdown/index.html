@@ -19,22 +19,21 @@
   <meta name="author" content="李宗達">
   <meta name="keywords" content="">
   
-    <meta name="description" content="LeetCode 8 - String to Integer (atoi)👉 題目連結 📖題目說明 Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer.The algorithm for myAtoi(string s) is as follows:  White">
+    <meta name="description" content="Markdown語法Markdown 是什麼？Markdown 是一種 輕量級標記語言（Lightweight Markup Language），主要用來快速編寫排版良好的文件它的特色是：  使用簡單的文字符號（如 #、*、&gt; 等）來控制格式。 可輸出成 HTML，並被廣泛應用在 GitHub、部落格、筆記（如 Notion、Obsidian）、文件編寫等場合。* 讓人能專注於內容，而不是複">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 8 - String to Integer (atoi)">
-<meta property="og:url" content="https://zongda617.github.io/2025/09/26/LeetCode-8-String-to-Integer-atoi/index.html">
+<meta property="og:title" content="Markdown語法">
+<meta property="og:url" content="https://zongda617.github.io/2025/09/26/Markdown/index.html">
 <meta property="og:site_name" content="ZongDa&#39;s website">
-<meta property="og:description" content="LeetCode 8 - String to Integer (atoi)👉 題目連結 📖題目說明 Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer.The algorithm for myAtoi(string s) is as follows:  White">
+<meta property="og:description" content="Markdown語法Markdown 是什麼？Markdown 是一種 輕量級標記語言（Lightweight Markup Language），主要用來快速編寫排版良好的文件它的特色是：  使用簡單的文字符號（如 #、*、&gt; 等）來控制格式。 可輸出成 HTML，並被廣泛應用在 GitHub、部落格、筆記（如 Notion、Obsidian）、文件編寫等場合。* 讓人能專注於內容，而不是複">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-09-25T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-09-26T07:04:53.090Z">
+<meta property="article:modified_time" content="2025-09-26T08:42:23.272Z">
 <meta property="article:author" content="李宗達">
-<meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>LeetCode 8 - String to Integer (atoi) - ZongDa&#39;s website</title>
+  <title>Markdown語法 - ZongDa&#39;s website</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LeetCode 8 - String to Integer (atoi)"></span>
+            <span id="subtitle" data-typed-text="Markdown語法"></span>
           
         </div>
 
@@ -221,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          480 words
+          158 words
         
       </span>
     
@@ -232,7 +231,7 @@
         
         
         
-          5 mins
+          2 mins
         
       </span>
     
@@ -269,70 +268,22 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LeetCode 8 - String to Integer (atoi)</h1>
+            <h1 id="seo-header">Markdown語法</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="LeetCode-8-String-to-Integer-atoi"><a href="#LeetCode-8-String-to-Integer-atoi" class="headerlink" title="LeetCode 8 - String to Integer (atoi)"></a>LeetCode 8 - String to Integer (atoi)</h1><p>👉 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/string-to-integer-atoi/description/">題目連結</a></p>
-<h2 id="📖題目說明"><a href="#📖題目說明" class="headerlink" title="📖題目說明"></a>📖題目說明</h2><blockquote>
-<p>Implement the <code>myAtoi(string s)</code> function, which converts a string to a 32-bit signed integer.<br>The algorithm for <code>myAtoi(string s)</code> is as follows:</p>
-<ol>
-<li><strong>Whitespace</strong>: Ignore any leading whitespace (<code>&quot; &quot;</code>).</li>
-<li><strong>Signedness</strong>: Determine the sign by checking if the next character is <code>&#39;-&#39;</code> or <code>&#39;+&#39;</code>, assuming positivity if neither present.</li>
-<li><strong>Conversion</strong>: Read the integer by skipping leading zeros until a non-digit character is encountered or the end of the string is reached. If no digits were read, then the result is 0.</li>
-<li><strong>Rounding</strong>: If the integer is out of the 32-bit signed integer range <code>[-2^31, 2^31 - 1]</code>, then round the integer to remain in the range. Specifically, integers less than <code>-2^31</code> should be rounded to <code>-2^31</code>, and integers greater than <code>2^31 - 1</code> should be rounded to <code>2^31 - 1</code>.<br>Return the integer as the final result.</li>
-</ol>
-</blockquote>
-<p>實作一個函數 myAtoi(s)，將字串轉換成整數，規則如下：</p>
-<ol>
-<li>忽略前導空白字元</li>
-<li>讀取可選的正負號</li>
-<li>從左到右讀取連續的數字，遇到非數字就停止</li>
-<li>結果若超過 32 位帶符號整數範圍 [-2^31, 2^31 - 1]，需截斷到邊界</li>
-<li>如果字串不含合法數字，回傳 0</li>
-</ol>
-<hr>
-<h2 id="範例輸入與輸出"><a href="#範例輸入與輸出" class="headerlink" title="範例輸入與輸出"></a>範例輸入與輸出</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><blockquote>
-<p><strong>Input</strong>: s &#x3D; “42”<br><strong>Output</strong>: 42</p>
-</blockquote>
-<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><blockquote>
-<p><strong>Input</strong>: s &#x3D; “ -042”<br><strong>Output</strong>: -42</p>
-</blockquote>
-<h3 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h3><blockquote>
-<p><strong>Input</strong>: s &#x3D; “1337c0d3”<br><strong>Output</strong>: 1337</p>
-</blockquote>
-<h3 id="Example-4"><a href="#Example-4" class="headerlink" title="Example 4"></a>Example 4</h3><blockquote>
-<p><strong>Input</strong>: s &#x3D; “0-1”<br><strong>Output</strong>: 0</p>
-</blockquote>
-<h3 id="Example-5"><a href="#Example-5" class="headerlink" title="Example 5"></a>Example 5</h3><blockquote>
-<p><strong>Input</strong>: s &#x3D; “words and 987”<br><strong>Output</strong>: 0</p>
-</blockquote>
-<hr>
-<h2 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h2><ul>
-<li><code>0 &lt;= s.length &lt;= 200</code></li>
-<li><code>s</code> 由英文字母（大小寫）、數字（<code>0-9</code>）、<code> </code>、<code>+</code>、<code>-</code>、<code>.</code>組成</li>
+                <h1 id="Markdown語法"><a href="#Markdown語法" class="headerlink" title="Markdown語法"></a>Markdown語法</h1><h2 id="Markdown-是什麼？"><a href="#Markdown-是什麼？" class="headerlink" title="Markdown 是什麼？"></a>Markdown 是什麼？</h2><p>Markdown 是一種 <strong>輕量級標記語言</strong>（Lightweight Markup Language），主要用來快速編寫排版良好的文件<br>它的特色是：</p>
+<ul>
+<li>使用簡單的文字符號（如 <code>#</code>、<code>*</code>、<code>&gt;</code> 等）來控制格式。</li>
+<li>可輸出成 <strong>HTML</strong>，並被廣泛應用在 GitHub、部落格、筆記（如 Notion、Obsidian）、文件編寫等場合。*</li>
+<li>讓人能<strong>專注於內容</strong>，而不是複雜的排版</li>
 </ul>
-<h2 id="Edge-case"><a href="#Edge-case" class="headerlink" title="Edge case"></a>Edge case</h2><ol>
-<li>空字串或只有空白 : <code>&quot;&quot;</code> → <code>0</code> &#x2F; <code>&quot; &quot;</code> → <code>0</code></li>
-<li>只有單一正負號 : <code>&quot;+&quot;</code> → <code>0</code>  &#x2F; <code>&quot;-&quot;</code> → <code>0</code></li>
-<li>正負號後面不是數字 : <code>&quot;+abc&quot;</code> → <code>0</code></li>
-<li>前導零 : <code>&quot;00000123&quot;</code> → <code>123</code></li>
-<li>混合字母與數字 : <code>&quot;0032a42&quot;</code> → <code>32</code> &#x2F; <code>&quot;12 34&quot;</code> → <code>12</code></li>
-<li>超過 32 位整數範圍 : <code>&quot;-12345678999&quot;</code> → <code>-2147483648</code></li>
-<li>符號與數字交錯 : <code>&quot;123-45&quot;</code> → <code>123</code></li>
-</ol>
 <hr>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="線性掃描"><a href="#線性掃描" class="headerlink" title="線性掃描"></a>線性掃描</h3><p><strong>解題想法</strong>:<br>這題雖然規則繁瑣，但其實只要按照步驟線性掃描就能處理所有情況</p>
-<ol>
-<li>先把字串左側的空格刪掉，找到第一個有效字元</li>
-<li>如果有 <code>+</code> 或 <code>-</code>，記錄數字的正負，並略過該符號</li>
-<li>從左到右逐位讀取數字，遇到非數字就停止</li>
-<li>最後將結果乘上正負號</li>
-<li>如果結果超過 32 位整數範圍，截斷到上下界</li>
-</ol>
-<p><strong>時間複雜度</strong>: O(n)，n 為字串長度<br><strong>空間複雜度</strong>: O(1)，因為只使用了常數變數</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">myAtoi</span>(<span class="hljs-params">self, s</span>):<br>        s = s.lstrip()<br>        sign = -<span class="hljs-number">1</span> <span class="hljs-keyword">if</span> s[:<span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;-&#x27;</span> <span class="hljs-keyword">else</span> <span class="hljs-number">1</span><br>        <span class="hljs-keyword">if</span> s[:<span class="hljs-number">1</span>] <span class="hljs-keyword">in</span> <span class="hljs-string">&#x27;+-&#x27;</span>: <br>            s = s[<span class="hljs-number">1</span>:]<br>        num = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> s:<br>            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> c.isdigit(): <br>                <span class="hljs-keyword">break</span><br>            num = num * <span class="hljs-number">10</span> + <span class="hljs-built_in">int</span>(c)<br>        num *= sign<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">max</span>(-<span class="hljs-number">2</span>**<span class="hljs-number">31</span>, <span class="hljs-built_in">min</span>(<span class="hljs-number">2</span>**<span class="hljs-number">31</span> - <span class="hljs-number">1</span>, num))<br></code></pre></td></tr></table></figure>
+<h2 id="基本語法"><a href="#基本語法" class="headerlink" title="基本語法"></a>基本語法</h2><h3 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h3><p>標題使用 <code>#</code> 來表示，<code>#</code> 的數量決定了標題的層級</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-section"># H1 標題</span><br><span class="hljs-section">## H2 標題</span><br><span class="hljs-section">### H3 標題</span><br><span class="hljs-section">#### H4 標題</span><br><span class="hljs-section">##### H5 標題</span><br><span class="hljs-section">###### H6 標題</span><br></code></pre></td></tr></table></figure>
+<p><strong>渲染效果</strong></p>
+<h1 id="H1-標題"><a href="#H1-標題" class="headerlink" title="H1 標題"></a>H1 標題</h1><h2 id="H2-標題"><a href="#H2-標題" class="headerlink" title="H2 標題"></a>H2 標題</h2><h3 id="H3-標題"><a href="#H3-標題" class="headerlink" title="H3 標題"></a>H3 標題</h3><h4 id="H4-標題"><a href="#H4-標題" class="headerlink" title="H4 標題"></a>H4 標題</h4><h5 id="H5-標題"><a href="#H5-標題" class="headerlink" title="H5 標題"></a>H5 標題</h5><h6 id="H6-標題"><a href="#H6-標題" class="headerlink" title="H6 標題"></a>H6 標題</h6><hr>
 
                 
               </div>
@@ -341,34 +292,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/LeetCode/" class="category-chain-item">LeetCode</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/LeetCode/" class="print-no-link">#LeetCode</a>
-      
-    </div>
   
 </div>
 
@@ -378,8 +301,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LeetCode 8 - String to Integer (atoi)</div>
-      <div>https://zongda617.github.io/2025/09/26/LeetCode-8-String-to-Integer-atoi/</div>
+      <div>Markdown語法</div>
+      <div>https://zongda617.github.io/2025/09/26/Markdown/</div>
     </div>
     <div class="license-meta">
       
@@ -423,18 +346,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/09/26/Markdown/" title="Markdown語法">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Markdown語法</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/09/24/LeetCode-7-Reverse-Integer/" title="LeetCode 7 - Reverse Integer">
-                        <span class="hidden-mobile">LeetCode 7 - Reverse Integer</span>
+                      <a href="/2025/09/26/LeetCode-8-String-to-Integer-atoi/" title="LeetCode 8 - String to Integer (atoi)">
+                        <span class="hidden-mobile">LeetCode 8 - String to Integer (atoi)</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
