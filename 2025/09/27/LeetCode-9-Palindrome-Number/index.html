@@ -19,22 +19,22 @@
   <meta name="author" content="李宗達">
   <meta name="keywords" content="">
   
-    <meta name="description" content="LeetCode 8 - String to Integer (atoi)👉 題目連結 📖題目說明 Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer.The algorithm for myAtoi(string s) is as follows:  White">
+    <meta name="description" content="LeetCode 9 - Palindrome Number👉 題目連結 📖題目說明 Given an integer x, return true if x is a palindrome, and false otherwise.判斷整數 x，是否為回文   範例輸入與輸出Example 1 Input: x &#x3D; 121Output: trueExplanation: 121 r">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 8 - String to Integer (atoi)">
-<meta property="og:url" content="https://zongda617.github.io/2025/09/26/LeetCode-8-String-to-Integer-atoi/index.html">
+<meta property="og:title" content="LeetCode 9 - Palindrome Number">
+<meta property="og:url" content="https://zongda617.github.io/2025/09/27/LeetCode-9-Palindrome-Number/index.html">
 <meta property="og:site_name" content="ZongDa&#39;s website">
-<meta property="og:description" content="LeetCode 8 - String to Integer (atoi)👉 題目連結 📖題目說明 Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer.The algorithm for myAtoi(string s) is as follows:  White">
+<meta property="og:description" content="LeetCode 9 - Palindrome Number👉 題目連結 📖題目說明 Given an integer x, return true if x is a palindrome, and false otherwise.判斷整數 x，是否為回文   範例輸入與輸出Example 1 Input: x &#x3D; 121Output: trueExplanation: 121 r">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-09-25T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-09-27T16:11:21.695Z">
+<meta property="article:published_time" content="2025-09-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-09-27T16:11:13.519Z">
 <meta property="article:author" content="李宗達">
 <meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>LeetCode 8 - String to Integer (atoi) - ZongDa&#39;s website</title>
+  <title>LeetCode 9 - Palindrome Number - ZongDa&#39;s website</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LeetCode 8 - String to Integer (atoi)"></span>
+            <span id="subtitle" data-typed-text="LeetCode 9 - Palindrome Number"></span>
           
         </div>
 
@@ -209,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-09-26 00:00" pubdate>
-          September 26, 2025 am
+        <time datetime="2025-09-27 00:00" pubdate>
+          September 27, 2025 am
         </time>
       </span>
     
@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          480 words
+          425 words
         
       </span>
     
@@ -232,7 +232,7 @@
         
         
         
-          5 mins
+          4 mins
         
       </span>
     
@@ -269,70 +269,56 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LeetCode 8 - String to Integer (atoi)</h1>
+            <h1 id="seo-header">LeetCode 9 - Palindrome Number</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="LeetCode-8-String-to-Integer-atoi"><a href="#LeetCode-8-String-to-Integer-atoi" class="headerlink" title="LeetCode 8 - String to Integer (atoi)"></a>LeetCode 8 - String to Integer (atoi)</h1><p>👉 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/string-to-integer-atoi/description/">題目連結</a></p>
+                <h1 id="LeetCode-9-Palindrome-Number"><a href="#LeetCode-9-Palindrome-Number" class="headerlink" title="LeetCode 9 - Palindrome Number"></a>LeetCode 9 - Palindrome Number</h1><p>👉 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/palindrome-number/description/">題目連結</a></p>
 <h2 id="📖題目說明"><a href="#📖題目說明" class="headerlink" title="📖題目說明"></a>📖題目說明</h2><blockquote>
-<p>Implement the <code>myAtoi(string s)</code> function, which converts a string to a 32-bit signed integer.<br>The algorithm for <code>myAtoi(string s)</code> is as follows:</p>
-<ol>
-<li><strong>Whitespace</strong>: Ignore any leading whitespace (<code>&quot; &quot;</code>).</li>
-<li><strong>Signedness</strong>: Determine the sign by checking if the next character is <code>&#39;-&#39;</code> or <code>&#39;+&#39;</code>, assuming positivity if neither present.</li>
-<li><strong>Conversion</strong>: Read the integer by skipping leading zeros until a non-digit character is encountered or the end of the string is reached. If no digits were read, then the result is 0.</li>
-<li><strong>Rounding</strong>: If the integer is out of the 32-bit signed integer range <code>[-2^31, 2^31 - 1]</code>, then round the integer to remain in the range. Specifically, integers less than <code>-2^31</code> should be rounded to <code>-2^31</code>, and integers greater than <code>2^31 - 1</code> should be rounded to <code>2^31 - 1</code>.<br>Return the integer as the final result.</li>
-</ol>
+<p>Given an integer <code>x</code>, return true if <code>x</code> is a <strong>palindrome</strong>, and false otherwise.<br>判斷整數 x，是否為回文</p>
 </blockquote>
-<p>實作一個函數 myAtoi(s)，將字串轉換成整數，規則如下：</p>
-<ol>
-<li>忽略前導空白字元</li>
-<li>讀取可選的正負號</li>
-<li>從左到右讀取連續的數字，遇到非數字就停止</li>
-<li>結果若超過 32 位帶符號整數範圍 [-2^31, 2^31 - 1]，需截斷到邊界</li>
-<li>如果字串不含合法數字，回傳 0</li>
-</ol>
 <hr>
 <h2 id="範例輸入與輸出"><a href="#範例輸入與輸出" class="headerlink" title="範例輸入與輸出"></a>範例輸入與輸出</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><blockquote>
-<p><strong>Input</strong>: s &#x3D; “42”<br><strong>Output</strong>: 42</p>
+<p><strong>Input</strong>: x &#x3D; 121<br><strong>Output</strong>: true<br><strong>Explanation</strong>: 121 reads as 121 from left to right and from right to left.</p>
 </blockquote>
 <h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><blockquote>
-<p><strong>Input</strong>: s &#x3D; “ -042”<br><strong>Output</strong>: -42</p>
+<p><strong>Input</strong>: x &#x3D; -121<br><strong>Output</strong>: false<br><strong>Explanation</strong>: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.</p>
 </blockquote>
 <h3 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h3><blockquote>
-<p><strong>Input</strong>: s &#x3D; “1337c0d3”<br><strong>Output</strong>: 1337</p>
-</blockquote>
-<h3 id="Example-4"><a href="#Example-4" class="headerlink" title="Example 4"></a>Example 4</h3><blockquote>
-<p><strong>Input</strong>: s &#x3D; “0-1”<br><strong>Output</strong>: 0</p>
-</blockquote>
-<h3 id="Example-5"><a href="#Example-5" class="headerlink" title="Example 5"></a>Example 5</h3><blockquote>
-<p><strong>Input</strong>: s &#x3D; “words and 987”<br><strong>Output</strong>: 0</p>
+<p><strong>Input</strong>: x &#x3D; 10<br><strong>Output</strong>: Reads 01 from right to left. Therefore it is not a palindrome.</p>
 </blockquote>
 <hr>
 <h2 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h2><ul>
-<li><code>0 &lt;= s.length &lt;= 200</code></li>
-<li><code>s</code> 由英文字母（大小寫）、數字（<code>0-9</code>）、<code> </code>、<code>+</code>、<code>-</code>、<code>.</code>組成</li>
+<li><code>-231 &lt;= x &lt;= 231 - 1</code></li>
 </ul>
-<h2 id="Edge-case"><a href="#Edge-case" class="headerlink" title="Edge case"></a>Edge case</h2><ol>
-<li>空字串或只有空白 : <code>&quot;&quot;</code> → <code>0</code> &#x2F; <code>&quot; &quot;</code> → <code>0</code></li>
-<li>只有單一正負號 : <code>&quot;+&quot;</code> → <code>0</code>  &#x2F; <code>&quot;-&quot;</code> → <code>0</code></li>
-<li>正負號後面不是數字 : <code>&quot;+abc&quot;</code> → <code>0</code></li>
-<li>前導零 : <code>&quot;00000123&quot;</code> → <code>123</code></li>
-<li>混合字母與數字 : <code>&quot;0032a42&quot;</code> → <code>32</code> &#x2F; <code>&quot;12 34&quot;</code> → <code>12</code></li>
-<li>超過 32 位整數範圍 : <code>&quot;-12345678999&quot;</code> → <code>-2147483648</code></li>
-<li>符號與數字交錯 : <code>&quot;123-45&quot;</code> → <code>123</code></li>
-</ol>
 <hr>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="線性掃描"><a href="#線性掃描" class="headerlink" title="線性掃描"></a>線性掃描</h3><p><strong>解題想法</strong>:<br>這題雖然規則繁瑣，但其實只要按照步驟線性掃描就能處理所有情況</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="轉字串"><a href="#轉字串" class="headerlink" title="轉字串"></a>轉字串</h3><p><strong>解題想法</strong>:<br>將數字轉成字串，直接檢查正反是不是一樣的就好</p>
 <ol>
-<li>先把字串左側的空格刪掉，找到第一個有效字元</li>
-<li>如果有 <code>+</code> 或 <code>-</code>，記錄數字的正負，並略過該符號</li>
-<li>從左到右逐位讀取數字，遇到非數字就停止</li>
-<li>最後將結果乘上正負號</li>
-<li>如果結果超過 32 位整數範圍，截斷到上下界</li>
+<li>如果 <code>x &lt; 0</code>，那一定不是迴文，因為前面多了一個 <code>-</code></li>
+<li>把數字轉成字串</li>
+<li>直接比較字串跟它的反轉 → 如果一樣就是迴文，不一樣就不是</li>
 </ol>
-<p><strong>時間複雜度</strong>: O(n)，n 為字串長度<br><strong>空間複雜度</strong>: O(1)，因為只使用了常數變數</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">myAtoi</span>(<span class="hljs-params">self, s</span>):<br>        s = s.lstrip()<br>        sign = -<span class="hljs-number">1</span> <span class="hljs-keyword">if</span> s[:<span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;-&#x27;</span> <span class="hljs-keyword">else</span> <span class="hljs-number">1</span><br>        <span class="hljs-keyword">if</span> s[:<span class="hljs-number">1</span>] <span class="hljs-keyword">in</span> <span class="hljs-string">&#x27;+-&#x27;</span>: <br>            s = s[<span class="hljs-number">1</span>:]<br>        num = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> s:<br>            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> c.isdigit(): <br>                <span class="hljs-keyword">break</span><br>            num = num * <span class="hljs-number">10</span> + <span class="hljs-built_in">int</span>(c)<br>        num *= sign<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">max</span>(-<span class="hljs-number">2</span>**<span class="hljs-number">31</span>, <span class="hljs-built_in">min</span>(<span class="hljs-number">2</span>**<span class="hljs-number">31</span> - <span class="hljs-number">1</span>, num))<br></code></pre></td></tr></table></figure>
+<p><strong>時間複雜度</strong>: O(log n)，n是數字的值<br><strong>空間複雜度</strong>: O(log n)，額外使用一個字串和一個反轉字串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">isPalindrome</span>(<span class="hljs-params">self, x</span>):<br>        <span class="hljs-keyword">if</span> x&lt;<span class="hljs-number">0</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">str</span>(x) == <span class="hljs-built_in">str</span>(x)[::-<span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure>
+
+<h3 id="數字反轉"><a href="#數字反轉" class="headerlink" title="數字反轉"></a>數字反轉</h3><p><strong>解題想法</strong>:<br>用數學的方法將數字反轉比較，不會創造額外的空間</p>
+<ol>
+<li>排除負數</li>
+<li>逐位反轉每個數字</li>
+<li>比較反轉後的數字與原數字</li>
+</ol>
+<p><strong>時間複雜度</strong>: O(log n)，n是數字的值<br><strong>空間複雜度</strong>: O(1)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">isPalindrome</span>(<span class="hljs-params">self, x</span>):<br>        <span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">0</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>        rev, num = <span class="hljs-number">0</span>, x<br>        <span class="hljs-keyword">while</span> num &gt; <span class="hljs-number">0</span>:<br>            rev = rev * <span class="hljs-number">10</span> + num % <span class="hljs-number">10</span><br>            num //= <span class="hljs-number">10</span><br>        <span class="hljs-keyword">return</span> rev == x<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="反轉一半數字"><a href="#反轉一半數字" class="headerlink" title="反轉一半數字"></a>反轉一半數字</h3><p><strong>解題想法</strong>:<br>要判斷是不是迴文，其實只要檢查一半就夠了，避免了不必要的計算</p>
+<ol>
+<li>負數或尾數為 <code>0</code>（且不是 <code>0</code> 本身）直接排除</li>
+<li>反轉數字的<strong>後半部分</strong>，直到反轉值大於等於剩下的前半</li>
+<li>偶數位數時比較 <code>x == rev</code>，奇數位數時比較 <code>x == rev // 10</code></li>
+</ol>
+<p><strong>時間複雜度</strong>: O(log n)，n是數字的值<br><strong>空間複雜度</strong>: O(1)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">isPalindrome</span>(<span class="hljs-params">self, x</span>):<br>        <span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> (x % <span class="hljs-number">10</span> == <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> x != <span class="hljs-number">0</span>):<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>        rev = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">while</span> x &gt; rev:<br>            rev = rev * <span class="hljs-number">10</span> + x % <span class="hljs-number">10</span><br>            x //= <span class="hljs-number">10</span><br>        <span class="hljs-keyword">return</span> x == rev <span class="hljs-keyword">or</span> x == rev // <span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -378,8 +364,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LeetCode 8 - String to Integer (atoi)</div>
-      <div>https://zongda617.github.io/2025/09/26/LeetCode-8-String-to-Integer-atoi/</div>
+      <div>LeetCode 9 - Palindrome Number</div>
+      <div>https://zongda617.github.io/2025/09/27/LeetCode-9-Palindrome-Number/</div>
     </div>
     <div class="license-meta">
       
@@ -391,7 +377,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>September 26, 2025</div>
+          <div>September 27, 2025</div>
         </div>
       
       
@@ -423,18 +409,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/09/27/LeetCode-9-Palindrome-Number/" title="LeetCode 9 - Palindrome Number">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LeetCode 9 - Palindrome Number</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/09/26/Markdown/" title="寫文件必學！Markdown 全面指南">
-                        <span class="hidden-mobile">寫文件必學！Markdown 全面指南</span>
+                      <a href="/2025/09/26/LeetCode-8-String-to-Integer-atoi/" title="LeetCode 8 - String to Integer (atoi)">
+                        <span class="hidden-mobile">LeetCode 8 - String to Integer (atoi)</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
