@@ -19,22 +19,24 @@
   <meta name="author" content="李宗達">
   <meta name="keywords" content="">
   
-    <meta name="description" content="LeetCode 1 - Two Sum👉 題目連結 📖題目說明 Given an array of integers nums and an integer target,return indices of the two numbers such that they add up to target.You may assume that each input would have exa">
+    <meta name="description" content="LeetCode 11 - Container With Most Water👉 題目連結 📖題目說明 You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the i^th line are (i, 0) and (i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 1 - Two Sum">
-<meta property="og:url" content="https://zongda617.github.io/2025/09/15/LeetCode-1-Two-Sum/index.html">
+<meta property="og:title" content="LeetCode 11 - Container With Most Water">
+<meta property="og:url" content="https://zongda617.github.io/2025/10/03/LeetCode-11-Container-With-Most-Water/index.html">
 <meta property="og:site_name" content="ZongDa&#39;s website">
-<meta property="og:description" content="LeetCode 1 - Two Sum👉 題目連結 📖題目說明 Given an array of integers nums and an integer target,return indices of the two numbers such that they add up to target.You may assume that each input would have exa">
+<meta property="og:description" content="LeetCode 11 - Container With Most Water👉 題目連結 📖題目說明 You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the i^th line are (i, 0) and (i">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-09-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-10-03T06:43:05.149Z">
+<meta property="og:image" content="https://zongda617.github.io/2025/10/03/LeetCode-11-Container-With-Most-Water/1.jpg">
+<meta property="article:published_time" content="2025-10-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-03T07:00:42.179Z">
 <meta property="article:author" content="李宗達">
 <meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zongda617.github.io/2025/10/03/LeetCode-11-Container-With-Most-Water/1.jpg">
   
   
   
-  <title>LeetCode 1 - Two Sum - ZongDa&#39;s website</title>
+  <title>LeetCode 11 - Container With Most Water - ZongDa&#39;s website</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LeetCode 1 - Two Sum"></span>
+            <span id="subtitle" data-typed-text="LeetCode 11 - Container With Most Water"></span>
           
         </div>
 
@@ -209,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-09-15 00:00" pubdate>
-          September 15, 2025 am
+        <time datetime="2025-10-03 00:00" pubdate>
+          October 3, 2025 am
         </time>
       </span>
     
@@ -221,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          286 words
+          483 words
         
       </span>
     
@@ -232,7 +234,7 @@
         
         
         
-          3 mins
+          5 mins
         
       </span>
     
@@ -269,37 +271,39 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LeetCode 1 - Two Sum</h1>
+            <h1 id="seo-header">LeetCode 11 - Container With Most Water</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="LeetCode-1-Two-Sum"><a href="#LeetCode-1-Two-Sum" class="headerlink" title="LeetCode 1 - Two Sum"></a>LeetCode 1 - Two Sum</h1><p>👉 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/two-sum/description/">題目連結</a></p>
+                <h1 id="LeetCode-11-Container-With-Most-Water"><a href="#LeetCode-11-Container-With-Most-Water" class="headerlink" title="LeetCode 11 - Container With Most Water"></a>LeetCode 11 - Container With Most Water</h1><p>👉 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/container-with-most-water/description/">題目連結</a></p>
 <h2 id="📖題目說明"><a href="#📖題目說明" class="headerlink" title="📖題目說明"></a>📖題目說明</h2><blockquote>
-<p>Given an array of integers nums and an integer target,<br>return indices of the two numbers such that they add up to target.<br>You may assume that each input would have exactly one solution,<br>and you may not use the same element twice.<br>You can return the answer in any order.<br>給你一組整數陣列<code>nums</code>以及一個整數<code>target</code>， 找出<code>nums</code>中相加為<code>target</code>的兩個相異數字，<br>每次只會有一組解答</p>
+<p>You are given an integer array <code>height</code> of length <code>n</code>. There are <code>n</code> vertical lines drawn such that the two endpoints of the <code>i^th</code> line are <code>(i, 0)</code> and <code>(i, height[i])</code>.<br>Find two lines that together with the x-axis form a container, such that the container contains the most water.<br>Return the maximum amount of water a container can store.<br><strong>Notice</strong> that you may not slant the container.</p>
 </blockquote>
+<p>給定一個整數陣列 <code>height</code>，每個元素代表在座標軸上的一條直線的高度<br>任意選擇兩條直線與 <code>x</code> 軸構成一個容器<br>容器能盛水的容量 &#x3D; 較短直線的高度 * 兩直線之間的距離<br>請找出能盛最多水的容器容量</p>
 <hr>
-<h2 id="範例輸入與輸出"><a href="#範例輸入與輸出" class="headerlink" title="範例輸入與輸出"></a>範例輸入與輸出</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><blockquote>
-<p><strong>Input</strong>: nums &#x3D; [2,7,11,15], target &#x3D; 9<br><strong>Output</strong>: [0,1]<br><strong>Explanation</strong>: Because nums[0] + nums[1] &#x3D;&#x3D; 9, we return [0, 1].</p>
+<h2 id="範例輸入與輸出"><a href="#範例輸入與輸出" class="headerlink" title="範例輸入與輸出"></a>範例輸入與輸出</h2><img src="/2025/10/03/LeetCode-11-Container-With-Most-Water/1.jpg" class="">
+<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><blockquote>
+<p><strong>Input</strong>: height &#x3D; [1,8,6,2,5,4,8,3,7]<br><strong>Output</strong>: 49<br><strong>Explanation</strong>: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.</p>
 </blockquote>
 <h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><blockquote>
-<p><strong>Input</strong>: nums &#x3D; [3,2,4], target &#x3D; 6<br><strong>Output</strong>: [1,2]</p>
-</blockquote>
-<h3 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h3><blockquote>
-<p><strong>Input</strong>: nums &#x3D; [3,3], target &#x3D; 6<br><strong>Output</strong>: [0,1]</p>
+<p><strong>Input</strong>: height &#x3D; [1,1]<br><strong>Output</strong>: 1</p>
 </blockquote>
 <hr>
 <h2 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h2><ul>
-<li><code>2 &lt;= nums.length &lt;= 10^4</code></li>
-<li><code>-10^9 &lt;= nums[i] &lt;= 10^9</code></li>
-<li><code>-10^9 &lt;= target &lt;= 10^9</code></li>
-<li><strong>Only one valid answer exists.</strong></li>
+<li><code>n == height.length</code></li>
+<li><code>2 &lt;= n &lt;= 10^5</code></li>
+<li><code>0 &lt;= height[i] &lt;= 10^4</code></li>
 </ul>
 <hr>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="暴力解"><a href="#暴力解" class="headerlink" title="暴力解"></a>暴力解</h3><p><strong>解題想法</strong>: 直接用雙迴圈找答案<br><strong>時間複雜度</strong>: O(n²)<br><strong>空間複雜度</strong>: O(1)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">twoSum</span>(<span class="hljs-params">self, nums, target</span>):<br>        n = <span class="hljs-built_in">len</span>(nums)<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n):<br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(i+<span class="hljs-number">1</span>,n):<br>                <span class="hljs-keyword">if</span> nums[i]+nums[j] == target:<br>                    <span class="hljs-keyword">return</span> [i,j]<br>        <span class="hljs-keyword">return</span> []<br></code></pre></td></tr></table></figure>
-<h3 id="Hash-Table"><a href="#Hash-Table" class="headerlink" title="Hash Table"></a>Hash Table</h3><p><strong>解題想法</strong>: 在遍歷一次<code>nums</code>可以知道每個數與<code>target</code>的差值(<code>target-num1</code>)，因此可以將每次的數字存進<code>Hash table</code>中，當差值出現在<code>table</code>中即可直接輸出結果，<code>Hash table</code>需要儲存<code>nums</code>中的數字及其<code>index</code><br><strong>時間複雜度</strong>: O(n)<br><strong>空間複雜度</strong>: O(n)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">twoSum</span>(<span class="hljs-params">self, nums, target</span>):<br>        hash_table= &#123;&#125;<br>        length = <span class="hljs-built_in">len</span>(nums)<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(length):<br>            <span class="hljs-keyword">if</span> target - nums[i] <span class="hljs-keyword">in</span> hash_table:<br>                <span class="hljs-keyword">return</span> [i,hash_table[target - nums[i]]]<br>            hash_table[nums[i]]=i<br></code></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="暴力法-TLE"><a href="#暴力法-TLE" class="headerlink" title="暴力法 (TLE)"></a>暴力法 (TLE)</h3><p><strong>解題想法</strong>:<br>用兩層迴圈列舉所有可能的左右邊界 <code>(i, j)</code><br>計算面積並取最大值<br>這種方法直觀，但效率差，因為每一對組合都要計算一次<br><strong>時間複雜度</strong>: O(n²) ， 需要枚舉所有兩兩組合<br><strong>空間複雜度</strong>: O(1) ，只需要常數額外變數</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">maxArea</span>(<span class="hljs-params">self, height: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]</span>) -&gt; <span class="hljs-built_in">int</span>:<br>        maximum = <span class="hljs-number">0</span> <br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(height)):<br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(i,<span class="hljs-built_in">len</span>(height)):<br>                l = <span class="hljs-built_in">min</span>(height[i],height[j])<br>                <span class="hljs-keyword">if</span> l*(j-i) &gt; maximum:<br>                    maximum = l*(j-i)<br>        <span class="hljs-keyword">return</span> maximum<br></code></pre></td></tr></table></figure>
+
+<h3 id="雙指針法"><a href="#雙指針法" class="headerlink" title="雙指針法"></a>雙指針法</h3><p><strong>解題想法</strong>:<br>寬度一開始最大（最左和最右），之後只會越來越小，所以要保留可能大的高度，盡量彌補寬度的縮小，因此選擇使用雙指針法<br>從陣列兩端同時設置指針，計算當前容器的容量<br>每次比較左右高度，移動較短的那一側，因為只有提高<strong>短邊</strong>才可能得到更大的面積<br>重複直到指針相遇，即可找到最大容量</p>
+<p><strong>時間複雜度</strong>: O(n)，每個元素最多被看一次<br><strong>空間複雜度</strong>: O(1)，只需要常數的額外變數</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">maxArea</span>(<span class="hljs-params">self, height: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]</span>) -&gt; <span class="hljs-built_in">int</span>:<br>        left = <span class="hljs-number">0</span><br>        right = <span class="hljs-built_in">len</span>(height)-<span class="hljs-number">1</span><br>        maximum = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">while</span> left&lt;right:<br>            lower = <span class="hljs-built_in">min</span>(height[right],height[left])<br>            maximum = <span class="hljs-built_in">max</span>(lower*(right-left),maximum)<br>            <span class="hljs-keyword">if</span> height[left]&gt;height[right]:<br>                right-=<span class="hljs-number">1</span><br>            <span class="hljs-keyword">else</span>:<br>                left+=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">return</span> maximum<br></code></pre></td></tr></table></figure>
+
+
                 
               </div>
             
@@ -344,8 +348,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LeetCode 1 - Two Sum</div>
-      <div>https://zongda617.github.io/2025/09/15/LeetCode-1-Two-Sum/</div>
+      <div>LeetCode 11 - Container With Most Water</div>
+      <div>https://zongda617.github.io/2025/10/03/LeetCode-11-Container-With-Most-Water/</div>
     </div>
     <div class="license-meta">
       
@@ -357,7 +361,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>September 15, 2025</div>
+          <div>October 3, 2025</div>
         </div>
       
       
@@ -389,18 +393,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/09/17/UVA-00948-Fibonaccimal-Base/" title="UVA 00948 - Fibonaccimal Base">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">UVA 00948 - Fibonaccimal Base</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/09/13/UVA-00490-Rotating-Sentences/" title="UVA 00490 - Rotating Sentences">
-                        <span class="hidden-mobile">UVA 00490 - Rotating Sentences</span>
+                      <a href="/2025/09/30/LeetCode-10-Regular-Expression-Matching/" title="LeetCode 10 - Regular Expression Matching">
+                        <span class="hidden-mobile">LeetCode 10 - Regular Expression Matching</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
