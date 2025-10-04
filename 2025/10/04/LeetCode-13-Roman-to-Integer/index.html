@@ -28,7 +28,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zongda617.github.io/2025/10/04/LeetCode-13-Roman-to-Integer/1.png">
 <meta property="article:published_time" content="2025-10-04T05:43:25.000Z">
-<meta property="article:modified_time" content="2025-10-04T06:07:46.795Z">
+<meta property="article:modified_time" content="2025-10-04T06:08:25.253Z">
 <meta property="article:author" content="李宗達">
 <meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary_large_image">
@@ -307,8 +307,7 @@
 <li>保證 <code>s</code> 是 <code>[1, 3999]</code> 範圍內的有效羅馬數字</li>
 </ul>
 <hr>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="左到右掃描法"><a href="#左到右掃描法" class="headerlink" title="左到右掃描法"></a>左到右掃描法</h3><p><strong>解題想法</strong>:</p>
-<p>先建立一個字典，把每個羅馬符號對應到它的數值<br>接著從左到右逐一比較：</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="左到右掃描法"><a href="#左到右掃描法" class="headerlink" title="左到右掃描法"></a>左到右掃描法</h3><p><strong>解題想法</strong>:<br>先建立一個字典，把每個羅馬符號對應到它的數值<br>接著從左到右逐一比較：</p>
 <ul>
 <li>若目前字元的值 &lt; 下一個字元的值，代表是<strong>減法情境</strong></li>
 <li>否則代表<strong>正常加法情境</strong><br>整個邏輯非常直覺，利用索引控制避免多餘的判斷，最後回傳 <code>num</code> 即為結果<br>唯一需要注意的是邊界條件<code>（i+1 &lt; len(s)）</code></li>
@@ -316,9 +315,7 @@
 <p><strong>時間複雜度</strong>: O(n) , 只需遍歷一次字串<br><strong>空間複雜度</strong>: O(1) , 只使用固定大小的字典與變數</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">romanToInt</span>(<span class="hljs-params">self, s: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">int</span>:<br>        sym = &#123;<span class="hljs-string">&#x27;M&#x27;</span>:<span class="hljs-number">1000</span>,<span class="hljs-string">&#x27;D&#x27;</span>:<span class="hljs-number">500</span>,<span class="hljs-string">&#x27;C&#x27;</span>:<span class="hljs-number">100</span>,<span class="hljs-string">&#x27;L&#x27;</span>:<span class="hljs-number">50</span>,<span class="hljs-string">&#x27;X&#x27;</span>:<span class="hljs-number">10</span>,<span class="hljs-string">&#x27;V&#x27;</span>:<span class="hljs-number">5</span>,<span class="hljs-string">&#x27;I&#x27;</span>:<span class="hljs-number">1</span>&#125;<br>        num = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(s)):<br>            <span class="hljs-built_in">print</span>(i,sym[s[i]])<br>            <span class="hljs-keyword">if</span> i+<span class="hljs-number">1</span>&lt;<span class="hljs-built_in">len</span>(s) <span class="hljs-keyword">and</span> sym[s[i]]&lt;sym[s[i+<span class="hljs-number">1</span>]]:<br>                num-=sym[s[i]]<br>            <span class="hljs-keyword">else</span>:<br>                num+=sym[s[i]]<br>        <span class="hljs-keyword">return</span> num<br></code></pre></td></tr></table></figure>
 
-<h3 id="字串替換法"><a href="#字串替換法" class="headerlink" title="字串替換法"></a>字串替換法</h3><p><strong>解題想法</strong>:</p>
-<p>把所有減法情況展開進行替換，讓整個字串變成只需要單純加總的形式</p>
-<p><strong>時間複雜度</strong>: O(n) , 雖然有多次 replace，但整體仍為線性級別<br><strong>空間複雜度</strong>: O(n) , 在替換過程中會產生新的字串</p>
+<h3 id="字串替換法"><a href="#字串替換法" class="headerlink" title="字串替換法"></a>字串替換法</h3><p><strong>解題想法</strong>:把所有減法情況展開進行替換，讓整個字串變成只需要單純加總的形式<br><strong>時間複雜度</strong>: O(n) , 雖然有多次 replace，但整體仍為線性級別<br><strong>空間複雜度</strong>: O(n) , 在替換過程中會產生新的字串</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">romanToInt</span>(<span class="hljs-params">self, s: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">int</span>:<br>        sym = &#123;<span class="hljs-string">&#x27;M&#x27;</span>:<span class="hljs-number">1000</span>,<span class="hljs-string">&#x27;D&#x27;</span>:<span class="hljs-number">500</span>,<span class="hljs-string">&#x27;C&#x27;</span>:<span class="hljs-number">100</span>,<span class="hljs-string">&#x27;L&#x27;</span>:<span class="hljs-number">50</span>,<span class="hljs-string">&#x27;X&#x27;</span>:<span class="hljs-number">10</span>,<span class="hljs-string">&#x27;V&#x27;</span>:<span class="hljs-number">5</span>,<span class="hljs-string">&#x27;I&#x27;</span>:<span class="hljs-number">1</span>&#125;<br>        repl = &#123;<span class="hljs-string">&#x27;IV&#x27;</span>: <span class="hljs-string">&#x27;IIII&#x27;</span>,<span class="hljs-string">&#x27;IX&#x27;</span>: <span class="hljs-string">&#x27;VIIII&#x27;</span>,<span class="hljs-string">&#x27;XL&#x27;</span>: <span class="hljs-string">&#x27;XXXX&#x27;</span>,<span class="hljs-string">&#x27;XC&#x27;</span>: <span class="hljs-string">&#x27;LXXXX&#x27;</span>,<span class="hljs-string">&#x27;CD&#x27;</span>: <span class="hljs-string">&#x27;CCCC&#x27;</span>,<span class="hljs-string">&#x27;CM&#x27;</span>: <span class="hljs-string">&#x27;DCCCC&#x27;</span>&#125;<br><br>        <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> repl.items():<br>            s = s.replace(k, v)<br>        num = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> ch <span class="hljs-keyword">in</span> s:<br>            num += sym[ch]<br>        <span class="hljs-keyword">return</span> num<br></code></pre></td></tr></table></figure>
 
                 
@@ -426,6 +423,39 @@
             </div>
 
             
+  
+  
+    <article id="comments">
+      
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://twikoo-comments-five.vercel.app/","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              Fluid.utils.listenDOMLoaded(function() {
+                var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+                Fluid.plugins.imageCaption(imgSelector);
+                Fluid.plugins.fancyBox(imgSelector);
+              });
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
           </article>
         </div>
       </div>
