@@ -19,24 +19,22 @@
   <meta name="author" content="李宗達">
   <meta name="keywords" content="">
   
-    <meta name="description" content="LeetCode 13 - Roman to Integer👉 題目連結 📖題目說明 Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.    For example, 2 is written as II in Roman numeral, just two ones added">
+    <meta name="description" content="LeetCode 14 - Longest Common Prefix👉 題目連結 📖題目說明 Write a function to find the longest common prefix string amongst an array of strings.If there is no common prefix, return an empty string &quot;&amp;quot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 13 - Roman to Integer">
-<meta property="og:url" content="https://zongda617.github.io/2025/10/04/LeetCode-13-Roman-to-Integer/index.html">
+<meta property="og:title" content="LeetCode 14 - Longest Common Prefix">
+<meta property="og:url" content="https://zongda617.github.io/2025/10/06/LeetCode-14-Longest-Common-Prefix/index.html">
 <meta property="og:site_name" content="ZongDa&#39;s website">
-<meta property="og:description" content="LeetCode 13 - Roman to Integer👉 題目連結 📖題目說明 Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.    For example, 2 is written as II in Roman numeral, just two ones added">
+<meta property="og:description" content="LeetCode 14 - Longest Common Prefix👉 題目連結 📖題目說明 Write a function to find the longest common prefix string amongst an array of strings.If there is no common prefix, return an empty string &quot;&amp;quot">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://zongda617.github.io/2025/10/04/LeetCode-13-Roman-to-Integer/1.png">
-<meta property="article:published_time" content="2025-10-04T05:43:25.000Z">
-<meta property="article:modified_time" content="2025-10-04T06:08:25.253Z">
+<meta property="article:published_time" content="2025-10-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-08T02:42:35.537Z">
 <meta property="article:author" content="李宗達">
 <meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://zongda617.github.io/2025/10/04/LeetCode-13-Roman-to-Integer/1.png">
   
   
   
-  <title>LeetCode 13 - Roman to Integer - ZongDa&#39;s website</title>
+  <title>LeetCode 14 - Longest Common Prefix - ZongDa&#39;s website</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LeetCode 13 - Roman to Integer"></span>
+            <span id="subtitle" data-typed-text="LeetCode 14 - Longest Common Prefix"></span>
           
         </div>
 
@@ -211,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-10-04 13:43" pubdate>
-          October 4, 2025 pm
+        <time datetime="2025-10-06 00:00" pubdate>
+          October 6, 2025 am
         </time>
       </span>
     
@@ -223,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          621 words
+          1k words
         
       </span>
     
@@ -234,7 +232,7 @@
         
         
         
-          6 mins
+          9 mins
         
       </span>
     
@@ -271,52 +269,44 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LeetCode 13 - Roman to Integer</h1>
+            <h1 id="seo-header">LeetCode 14 - Longest Common Prefix</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="LeetCode-13-Roman-to-Integer"><a href="#LeetCode-13-Roman-to-Integer" class="headerlink" title="LeetCode 13 - Roman to Integer"></a>LeetCode 13 - Roman to Integer</h1><p>👉 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/roman-to-integer/description/">題目連結</a></p>
+                <h1 id="LeetCode-14-Longest-Common-Prefix"><a href="#LeetCode-14-Longest-Common-Prefix" class="headerlink" title="LeetCode 14 - Longest Common Prefix"></a>LeetCode 14 - Longest Common Prefix</h1><p>👉 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-common-prefix/description/">題目連結</a></p>
 <h2 id="📖題目說明"><a href="#📖題目說明" class="headerlink" title="📖題目說明"></a>📖題目說明</h2><blockquote>
-<p>Roman numerals are represented by seven different symbols: <code>I</code>, <code>V</code>, <code>X</code>, <code>L</code>, <code>C</code>, <code>D</code> and <code>M</code>.</p>
+<p>Write a function to find the longest common prefix string amongst an array of strings.<br>If there is no common prefix, return an empty string <code>&quot;&quot;</code>.</p>
 </blockquote>
-<img src="/2025/10/04/LeetCode-13-Roman-to-Integer/1.png" class="">
-<blockquote>
-<p>For example, <code>2</code> is written as <code>II</code> in Roman numeral, just two ones added together. <code>12</code> is written as <code>XII</code>, which is simply <code>X + II</code>. The number <code>27</code> is written as <code>XXVII</code>, which is <code>XX + V + II</code>.<br>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <code>IIII</code>. Instead, the number four is written as <code>IV</code>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <code>IX</code>. There are six instances where subtraction is used:</p>
-<ul>
-<li><code>I</code> can be placed before <code>V</code> (5) and <code>X</code> (10) to make 4 and 9. </li>
-<li><code>X</code> can be placed before <code>L</code> (50) and <code>C</code> (100) to make 40 and 90. </li>
-<li><code>C</code> can be placed before <code>D</code> (500) and <code>M</code> (1000) to make 400 and 900.<br>Given a roman numeral, convert it to an integer.</li>
-</ul>
-</blockquote>
-<p>將羅馬數字的字串轉換成對應的整數<br>羅馬數字的基本符號：<br>I &#x3D; 1，V &#x3D; 5，X &#x3D; 10，L &#x3D; 50<br>C &#x3D; 100，D &#x3D; 500，M &#x3D; 1000<br>遵守<code>小在大左邊時表示減法</code>的規則<br>4 &#x3D; IV，9 &#x3D; IX<br>40 &#x3D; XL，90 &#x3D; XC<br>400 &#x3D; CD，900 &#x3D; CM</p>
+<p>尋找字串陣列中最長的<code>公共前綴字串</code>，如果沒有公共前綴，則傳回空字串<code>&quot;&quot;</code></p>
 <hr>
 <h2 id="範例輸入與輸出"><a href="#範例輸入與輸出" class="headerlink" title="範例輸入與輸出"></a>範例輸入與輸出</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><blockquote>
-<p><strong>Input</strong>: s &#x3D; “III”<br><strong>Output</strong>: 3<br><strong>Explanation</strong>: III &#x3D; 3.</p>
+<p><strong>Input</strong>: strs &#x3D; [“flower”,”flow”,”flight”]<br><strong>Output</strong>: “fl”</p>
 </blockquote>
 <h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><blockquote>
-<p><strong>Input</strong>: s &#x3D; “LVIII”<br><strong>Output</strong>: 58<br><strong>Explanation</strong>: L &#x3D; 50, V&#x3D; 5, III &#x3D; 3.</p>
-</blockquote>
-<h3 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h3><blockquote>
-<p><strong>Input</strong>: s &#x3D; “MCMXCIV”<br><strong>Output</strong>: 1994<br><strong>Explanation</strong>: M &#x3D; 1000, CM &#x3D; 900, XC &#x3D; 90 and IV &#x3D; 4.</p>
+<p><strong>Input</strong>: strs &#x3D; [“dog”,”racecar”,”car”]<br><strong>Output</strong>: “”<br><strong>Explanation</strong>: There is no common prefix among the input strings.</p>
 </blockquote>
 <hr>
 <h2 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h2><ul>
-<li><code>1 &lt;= s.length &lt;= 15</code></li>
-<li><code>s</code> 僅包含字元<code>（&#39;I&#39;、&#39;V&#39;、&#39;X&#39;、&#39;L&#39;、&#39;C&#39;、&#39;D&#39;、&#39;M&#39;）</code></li>
-<li>保證 <code>s</code> 是 <code>[1, 3999]</code> 範圍內的有效羅馬數字</li>
+<li><code>1 &lt;= strs.length &lt;= 200</code></li>
+<li><code>0 &lt;= strs[i].length &lt;= 200</code></li>
+<li><code>strs[i]</code> 由小寫英文字母組成</li>
 </ul>
 <hr>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="左到右掃描法"><a href="#左到右掃描法" class="headerlink" title="左到右掃描法"></a>左到右掃描法</h3><p><strong>解題想法</strong>:<br>先建立一個字典，把每個羅馬符號對應到它的數值<br>接著從左到右逐一比較：</p>
-<ul>
-<li>若目前字元的值 &lt; 下一個字元的值，代表是<strong>減法情境</strong></li>
-<li>否則代表<strong>正常加法情境</strong><br>整個邏輯非常直覺，利用索引控制避免多餘的判斷，最後回傳 <code>num</code> 即為結果<br>唯一需要注意的是邊界條件<code>（i+1 &lt; len(s)）</code></li>
-</ul>
-<p><strong>時間複雜度</strong>: O(n) , 只需遍歷一次字串<br><strong>空間複雜度</strong>: O(1) , 只使用固定大小的字典與變數</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">romanToInt</span>(<span class="hljs-params">self, s: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">int</span>:<br>        sym = &#123;<span class="hljs-string">&#x27;M&#x27;</span>:<span class="hljs-number">1000</span>,<span class="hljs-string">&#x27;D&#x27;</span>:<span class="hljs-number">500</span>,<span class="hljs-string">&#x27;C&#x27;</span>:<span class="hljs-number">100</span>,<span class="hljs-string">&#x27;L&#x27;</span>:<span class="hljs-number">50</span>,<span class="hljs-string">&#x27;X&#x27;</span>:<span class="hljs-number">10</span>,<span class="hljs-string">&#x27;V&#x27;</span>:<span class="hljs-number">5</span>,<span class="hljs-string">&#x27;I&#x27;</span>:<span class="hljs-number">1</span>&#125;<br>        num = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(s)):<br>            <span class="hljs-built_in">print</span>(i,sym[s[i]])<br>            <span class="hljs-keyword">if</span> i+<span class="hljs-number">1</span>&lt;<span class="hljs-built_in">len</span>(s) <span class="hljs-keyword">and</span> sym[s[i]]&lt;sym[s[i+<span class="hljs-number">1</span>]]:<br>                num-=sym[s[i]]<br>            <span class="hljs-keyword">else</span>:<br>                num+=sym[s[i]]<br>        <span class="hljs-keyword">return</span> num<br></code></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="水平掃描"><a href="#水平掃描" class="headerlink" title="水平掃描"></a>水平掃描</h3><p><strong>解題想法</strong>:<br>這個方法的核心概念是<strong>逐一縮短前綴</strong><br>先假設整個陣列的第一個字串是目前的共同前綴，接著從第二個字串開始逐一比對<br>只要發現當前字串不是以這個前綴開頭，就不斷把前綴從尾端削短，直到它變成當前字串的前綴為止<br>這樣每次比對都會讓 prefix 越來越短，效率反而很好<br>個人覺得這個方法是最直觀且實務上最穩定的寫法，在大多數情況下效能都非常接近最佳</p>
+<p><strong>時間複雜度</strong>: O(n) , 其中 n 為所有字元的總數<br><strong>空間複雜度</strong>: O(1) , 只需常數額外空間</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">longestCommonPrefix</span>(<span class="hljs-params">self, strs: <span class="hljs-type">List</span>[<span class="hljs-built_in">str</span>]</span>) -&gt; <span class="hljs-built_in">str</span>:<br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> strs:<br>            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span><br>        pre = strs[<span class="hljs-number">0</span>]<br>        <span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> strs[<span class="hljs-number">1</span>:]:<br>            <span class="hljs-keyword">while</span> <span class="hljs-keyword">not</span> s.startswith(pre):<br>                pre = pre[:-<span class="hljs-number">1</span>]<br>                <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> pre:<br>                    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span><br>        <span class="hljs-keyword">return</span> pre<br></code></pre></td></tr></table></figure>
 
-<h3 id="字串替換法"><a href="#字串替換法" class="headerlink" title="字串替換法"></a>字串替換法</h3><p><strong>解題想法</strong>:把所有減法情況展開進行替換，讓整個字串變成只需要單純加總的形式<br><strong>時間複雜度</strong>: O(n) , 雖然有多次 replace，但整體仍為線性級別<br><strong>空間複雜度</strong>: O(n) , 在替換過程中會產生新的字串</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">romanToInt</span>(<span class="hljs-params">self, s: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">int</span>:<br>        sym = &#123;<span class="hljs-string">&#x27;M&#x27;</span>:<span class="hljs-number">1000</span>,<span class="hljs-string">&#x27;D&#x27;</span>:<span class="hljs-number">500</span>,<span class="hljs-string">&#x27;C&#x27;</span>:<span class="hljs-number">100</span>,<span class="hljs-string">&#x27;L&#x27;</span>:<span class="hljs-number">50</span>,<span class="hljs-string">&#x27;X&#x27;</span>:<span class="hljs-number">10</span>,<span class="hljs-string">&#x27;V&#x27;</span>:<span class="hljs-number">5</span>,<span class="hljs-string">&#x27;I&#x27;</span>:<span class="hljs-number">1</span>&#125;<br>        repl = &#123;<span class="hljs-string">&#x27;IV&#x27;</span>: <span class="hljs-string">&#x27;IIII&#x27;</span>,<span class="hljs-string">&#x27;IX&#x27;</span>: <span class="hljs-string">&#x27;VIIII&#x27;</span>,<span class="hljs-string">&#x27;XL&#x27;</span>: <span class="hljs-string">&#x27;XXXX&#x27;</span>,<span class="hljs-string">&#x27;XC&#x27;</span>: <span class="hljs-string">&#x27;LXXXX&#x27;</span>,<span class="hljs-string">&#x27;CD&#x27;</span>: <span class="hljs-string">&#x27;CCCC&#x27;</span>,<span class="hljs-string">&#x27;CM&#x27;</span>: <span class="hljs-string">&#x27;DCCCC&#x27;</span>&#125;<br><br>        <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> repl.items():<br>            s = s.replace(k, v)<br>        num = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> ch <span class="hljs-keyword">in</span> s:<br>            num += sym[ch]<br>        <span class="hljs-keyword">return</span> num<br></code></pre></td></tr></table></figure>
+<h3 id="垂直掃描"><a href="#垂直掃描" class="headerlink" title="垂直掃描"></a>垂直掃描</h3><p><strong>解題想法</strong>:<br>垂直掃描法是從<strong>字元位置</strong>的角度來思考<br>把第一個字串當作基準，然後從第 0 個字元開始，檢查所有字串在這個位置是否相同<br>若有任意字串在該位置結束或字元不同，就代表共同前綴結束<br>這個方法比水平掃描更早停止<br>而且思路很直觀就像逐欄檢查一個文字表格<br>實際上它和水平掃描在時間複雜度上相同，屬於最簡潔且易於理解的寫法之一<br><strong>時間複雜度</strong>: O(n) , 其中 n 為所有字元的總數<br><strong>空間複雜度</strong>: O(1) , 只需常數額外空間</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">longestCommonPrefix</span>(<span class="hljs-params">self, strs: <span class="hljs-type">List</span>[<span class="hljs-built_in">str</span>]</span>) -&gt; <span class="hljs-built_in">str</span>:<br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> strs:<br>            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(strs[<span class="hljs-number">0</span>])):<br>            c = strs[<span class="hljs-number">0</span>][i]<br>            <span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> strs[<span class="hljs-number">1</span>:]:<br>                <span class="hljs-keyword">if</span> i &gt;= <span class="hljs-built_in">len</span>(s) <span class="hljs-keyword">or</span> s[i] != c:<br>                    <span class="hljs-keyword">return</span> strs[<span class="hljs-number">0</span>][:i]<br>        <span class="hljs-keyword">return</span> strs[<span class="hljs-number">0</span>]<br></code></pre></td></tr></table></figure>
+
+<h3 id="二分搜尋"><a href="#二分搜尋" class="headerlink" title="二分搜尋"></a>二分搜尋</h3><p><strong>解題想法</strong>:<br>這個方法是從<strong>前綴長度</strong>的角度出發，而不是直接比字串<br>我會先找到最短字串的長度 <code>Lmin</code>，然後對 <code>[0, Lmin]</code> 進行二分搜尋<br>每次取中間長度 <code>mid</code>，檢查所有字串是否都包含該長度的共同前綴<br>若是，就嘗試更長，否則縮短<br>這樣能在某些情況下減少重複比對，尤其是字串很長但差異發生在後段時<br>不過實務上它比 <code>O(n)</code> 的掃描法多一個 <code>log(L)</code> 的開銷</p>
+<p><strong>時間複雜度</strong>: O(n · log Lmin)，其中 Lmin 為最短字串長度<br><strong>空間複雜度</strong>: O(1) </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">longestCommonPrefix</span>(<span class="hljs-params">self, strs: <span class="hljs-type">List</span>[<span class="hljs-built_in">str</span>]</span>) -&gt; <span class="hljs-built_in">str</span>:<br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> strs:<br>            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span><br>        min_len = <span class="hljs-built_in">min</span>(<span class="hljs-built_in">len</span>(s) <span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> strs)<br><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">ok</span>(<span class="hljs-params">L</span>):<br>            pref = strs[<span class="hljs-number">0</span>][:L]<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">all</span>(s.startswith(pref) <span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> strs)<br><br>        lo, hi = <span class="hljs-number">0</span>, min_len<br>        <span class="hljs-keyword">while</span> lo &lt; hi:<br>            mid = (lo + hi + <span class="hljs-number">1</span>) // <span class="hljs-number">2</span><br>            <span class="hljs-keyword">if</span> ok(mid):<br>                lo = mid<br>            <span class="hljs-keyword">else</span>:<br>                hi = mid - <span class="hljs-number">1</span><br>        <span class="hljs-keyword">return</span> strs[<span class="hljs-number">0</span>][:lo]<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="分治法"><a href="#分治法" class="headerlink" title="分治法"></a>分治法</h3><p><strong>解題想法</strong>:<br>把字串陣列分成左右兩半，分別遞迴求出各自的最長共同前綴<br>最後再合併兩邊的結果<br>這樣做的好處是概念清楚，而且在理論上能以遞迴的方式自然分解問題<br>不過實務上，因為每層都要比較前綴、並維護遞迴堆疊，實際速度未必比單純掃描快<br>但我覺得這個方法非常適合用來展示演算法設計思維<br>尤其是在<strong>如何拆問題</strong>和<strong>如何合結果</strong>的教學中很有代表性</p>
+<p><strong>時間複雜度</strong>: O(n) , n 為所有字元的總數<br><strong>空間複雜度</strong>: O(m · log n) , m 為最長共同前綴長度，n 為字串數</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">longestCommonPrefix</span>(<span class="hljs-params">self, strs: <span class="hljs-type">List</span>[<span class="hljs-built_in">str</span>]</span>) -&gt; <span class="hljs-built_in">str</span>:<br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> strs:<br>            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span><br><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">lcp</span>(<span class="hljs-params">left: <span class="hljs-built_in">int</span>, right: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">str</span>:<br>            <span class="hljs-keyword">if</span> left == right:<br>                <span class="hljs-keyword">return</span> strs[left]<br>            <br>            mid = (left + right) // <span class="hljs-number">2</span><br>            lcp_left = lcp(left, mid)<br>            lcp_right = lcp(mid + <span class="hljs-number">1</span>, right)<br><br>            <span class="hljs-keyword">return</span> common_prefix(lcp_left, lcp_right)<br><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">common_prefix</span>(<span class="hljs-params">s1: <span class="hljs-built_in">str</span>, s2: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">str</span>:<br>            min_len = <span class="hljs-built_in">min</span>(<span class="hljs-built_in">len</span>(s1), <span class="hljs-built_in">len</span>(s2))<br>            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(min_len):<br>                <span class="hljs-keyword">if</span> s1[i] != s2[i]:<br>                    <span class="hljs-keyword">return</span> s1[:i]<br>            <span class="hljs-keyword">return</span> s1[:min_len]<br><br>        <span class="hljs-keyword">return</span> lcp(<span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(strs) - <span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -362,8 +352,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LeetCode 13 - Roman to Integer</div>
-      <div>https://zongda617.github.io/2025/10/04/LeetCode-13-Roman-to-Integer/</div>
+      <div>LeetCode 14 - Longest Common Prefix</div>
+      <div>https://zongda617.github.io/2025/10/06/LeetCode-14-Longest-Common-Prefix/</div>
     </div>
     <div class="license-meta">
       
@@ -375,7 +365,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>October 4, 2025</div>
+          <div>October 6, 2025</div>
         </div>
       
       
@@ -407,18 +397,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/10/06/LeetCode-14-Longest-Common-Prefix/" title="LeetCode 14 - Longest Common Prefix">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LeetCode 14 - Longest Common Prefix</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/10/03/LeetCode-11-Container-With-Most-Water/" title="LeetCode 11 - Container With Most Water">
-                        <span class="hidden-mobile">LeetCode 11 - Container With Most Water</span>
+                      <a href="/2025/10/04/LeetCode-13-Roman-to-Integer/" title="LeetCode 13 - Roman to Integer">
+                        <span class="hidden-mobile">LeetCode 13 - Roman to Integer</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
