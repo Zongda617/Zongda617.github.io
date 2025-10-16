@@ -19,22 +19,22 @@
   <meta name="author" content="李宗達">
   <meta name="keywords" content="">
   
-    <meta name="description" content="LeetCode 7 - Reverse Integer👉 題目連結 📖題目說明 Given a signed 32-bit integer x, return x with its digits reversed.If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 -">
+    <meta name="description" content="LeetCode 18 - 4Sum👉 題目連結 📖題目說明 Given an array nums of n integers, return an array of all the unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that:  0 &lt;&#x3D; a, b, c, d &lt; n a, b, c, an">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 7 - Reverse Integer">
-<meta property="og:url" content="https://zongda617.github.io/2025/09/24/LeetCode-7-Reverse-Integer/index.html">
+<meta property="og:title" content="LeetCode 18 - 4Sum">
+<meta property="og:url" content="https://zongda617.github.io/2025/10/16/LeetCode-18-4Sum/index.html">
 <meta property="og:site_name" content="ZongDa&#39;s website">
-<meta property="og:description" content="LeetCode 7 - Reverse Integer👉 題目連結 📖題目說明 Given a signed 32-bit integer x, return x with its digits reversed.If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 -">
+<meta property="og:description" content="LeetCode 18 - 4Sum👉 題目連結 📖題目說明 Given an array nums of n integers, return an array of all the unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that:  0 &lt;&#x3D; a, b, c, d &lt; n a, b, c, an">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-09-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-09-24T03:20:57.610Z">
+<meta property="article:published_time" content="2025-10-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-16T07:25:26.805Z">
 <meta property="article:author" content="李宗達">
 <meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>LeetCode 7 - Reverse Integer - ZongDa&#39;s website</title>
+  <title>LeetCode 18 - 4Sum - ZongDa&#39;s website</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LeetCode 7 - Reverse Integer"></span>
+            <span id="subtitle" data-typed-text="LeetCode 18 - 4Sum"></span>
           
         </div>
 
@@ -209,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-09-24 00:00" pubdate>
-          September 24, 2025 am
+        <time datetime="2025-10-16 00:00" pubdate>
+          October 16, 2025 am
         </time>
       </span>
     
@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          462 words
+          613 words
         
       </span>
     
@@ -232,7 +232,7 @@
         
         
         
-          4 mins
+          6 mins
         
       </span>
     
@@ -269,50 +269,54 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LeetCode 7 - Reverse Integer</h1>
+            <h1 id="seo-header">LeetCode 18 - 4Sum</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="LeetCode-7-Reverse-Integer"><a href="#LeetCode-7-Reverse-Integer" class="headerlink" title="LeetCode 7 - Reverse Integer"></a>LeetCode 7 - Reverse Integer</h1><p>👉 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/reverse-integer/description/">題目連結</a></p>
+                <h1 id="LeetCode-18-4Sum"><a href="#LeetCode-18-4Sum" class="headerlink" title="LeetCode 18 - 4Sum"></a>LeetCode 18 - 4Sum</h1><p>👉 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/4sum/description/">題目連結</a></p>
 <h2 id="📖題目說明"><a href="#📖題目說明" class="headerlink" title="📖題目說明"></a>📖題目說明</h2><blockquote>
-<p>Given a signed 32-bit integer <code>x</code>, return <code>x</code> with its digits reversed.<br>If reversing <code>x</code> causes the value to go outside the signed 32-bit integer range <code>[-231, 231 - 1]</code>, then return <code>0</code>.<br>Assume the environment does not allow you to store 64-bit integers (signed or unsigned).</p>
+<p>Given an array <code>nums</code> of <code>n</code> integers, return an array of all the <strong>unique</strong> quadruplets <code>[nums[a], nums[b], nums[c], nums[d]]</code> such that:</p>
+<ul>
+<li><code>0 &lt;= a, b, c, d &lt; n</code></li>
+<li><code>a</code>, <code>b</code>, <code>c</code>, and <code>d</code> are <strong>distinct</strong>.</li>
+<li><code>nums[a] + nums[b] + nums[c] + nums[d] == target</code><br>You may return the answer in <strong>any order</strong>.</li>
+</ul>
 </blockquote>
-<p>給定一個 32 位元帶號整數 <code>x</code>，將它的數字反轉後回傳<br>如果反轉後超出範圍 <code>[-2^31, 2^31 - 1]</code>，就回傳 <code>0</code><br>不允許使用超過 64 位的整數存放。</p>
+<p>給一個數組<code>nums</code>，傳回一個由<strong>唯一</strong>四元組<code>[nums[a], nums[b], nums[c], nums[d]]</code>組成的數組，使得：</p>
+<ul>
+<li><code>0 &lt;= a, b, c, d &lt; n</code></li>
+<li><code>a</code>、<code>b</code>、<code>c</code> 和 <code>d</code> 是<strong>不同的</strong></li>
+<li><code>nums[a] + nums[b] + nums[c] + nums[d] == target</code><br>您可以以<strong>任意順序</strong>返回答案</li>
+</ul>
 <hr>
 <h2 id="範例輸入與輸出"><a href="#範例輸入與輸出" class="headerlink" title="範例輸入與輸出"></a>範例輸入與輸出</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><blockquote>
-<p><strong>Input</strong>: x &#x3D; 123<br><strong>Output</strong>: 321</p>
+<p><strong>Input</strong>: Input: nums &#x3D; [1,0,-1,0,-2,2], target &#x3D; 0<br><strong>Output</strong>: Output: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]</p>
 </blockquote>
 <h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><blockquote>
-<p><strong>Input</strong>: x &#x3D; -123<br><strong>Output</strong>: -321</p>
-</blockquote>
-<h3 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h3><blockquote>
-<p><strong>Input</strong>: x &#x3D; 120<br><strong>Output</strong>: 21</p>
+<p><strong>Input</strong>: nums &#x3D; [2,2,2,2,2], target &#x3D; 8<br><strong>Output</strong>: [[2,2,2,2]]</p>
 </blockquote>
 <hr>
 <h2 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h2><ul>
-<li><code>-231 &lt;= x &lt;= 231 - 1</code></li>
+<li><code>1 &lt;= nums.length &lt;= 200</code></li>
+<li><code>-10^9 &lt;= target &lt;= 10^9</code></li>
+<li><code>-10^9 &lt;= nums[i] &lt;= 10^9</code></li>
 </ul>
 <hr>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="字串處理"><a href="#字串處理" class="headerlink" title="字串處理"></a>字串處理</h3><p><strong>解題想法</strong>:<br>直接把數字轉成字串處理，因為這樣反轉會非常直觀</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="排序-雙指針-剪枝"><a href="#排序-雙指針-剪枝" class="headerlink" title="排序 + 雙指針 + 剪枝"></a>排序 + 雙指針 + 剪枝</h3><p><strong>解題想法</strong>:<br>這題我採用<strong>排序</strong> + <strong>雙指針</strong>的方式，算是經典的 <code>k-Sum</code> 模板延伸到 <code>4Sum</code><br>先固定前兩個數，再用雙指針在剩下的區間中尋找另外兩個數<br>過程中要特別注意<strong>重複元素</strong>與<strong>剪枝條件</strong>，否則時間會炸開或產生重複解</p>
 <ol>
-<li>先判斷 <code>x</code> 是否為負數</li>
-<li>把數字轉成字串並反轉</li>
-<li>再轉回整數，補上正負號</li>
-<li>檢查是否超出 32 位範圍，若超出就回傳 <code>0</code><br>Python 本身的整數沒有 32 位溢位問題，可以直接處理大整數</li>
+<li>先將陣列排序，方便去重與指針移動</li>
+<li>接著固定前兩個數 <code>nums[i]</code>、<code>nums[j]</code></li>
+<li>再用雙指針在右側區間中搜尋剩下兩個數，使四數總和等於 <code>target</code></li>
+<li>為提升效率，加入上下界剪枝：<ul>
+<li>如果最小四數和已大於 <code>target</code>，提前結束迴圈</li>
+<li>如果最大四數和仍小於 <code>target</code>，直接略過</li>
+</ul>
+</li>
+<li>雙指針部分依據總和大小調整左右指標，並在找到組合後跳過重複值，避免重複解</li>
 </ol>
-<p><strong>時間複雜度</strong>: O(n)，<code>n</code>表示數字的位數，主要花費在 <code>str(x)</code> 和 <code>[::-1]</code> 的操作<br><strong>空間複雜度</strong>: O(n)，因為要建立字串 <code>str(x)</code> 和反轉後的新字串</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">reverse</span>(<span class="hljs-params">self, x</span>):<br>        <span class="hljs-keyword">if</span> x&lt;<span class="hljs-number">0</span>:<br>            x*=-<span class="hljs-number">1</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span> <span class="hljs-keyword">if</span> -<span class="hljs-built_in">int</span>(<span class="hljs-built_in">str</span>(x)[::-<span class="hljs-number">1</span>]) &lt; -<span class="hljs-number">2</span>**<span class="hljs-number">31</span> <span class="hljs-keyword">else</span> -<span class="hljs-built_in">int</span>(<span class="hljs-built_in">str</span>(x)[::-<span class="hljs-number">1</span>])<br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span> <span class="hljs-keyword">if</span> <span class="hljs-built_in">int</span>(<span class="hljs-built_in">str</span>(x)[::-<span class="hljs-number">1</span>]) &gt; <span class="hljs-number">2</span>**<span class="hljs-number">31</span>-<span class="hljs-number">1</span> <span class="hljs-keyword">else</span>  <span class="hljs-built_in">int</span>(<span class="hljs-built_in">str</span>(x)[::-<span class="hljs-number">1</span>])<br></code></pre></td></tr></table></figure>
-<h3 id="數學pop-push"><a href="#數學pop-push" class="headerlink" title="數學pop &amp; push"></a>數學pop &amp; push</h3><p><strong>解題想法</strong>: 改用數學方式，逐位取出數字並組合回去</p>
-<ol>
-<li>先記錄數字的正負號。</li>
-<li>每次用 <code>%10</code> 取出最後一位數（pop）</li>
-<li>將結果往左移一位（乘 10）並加上這個數字（push）</li>
-<li>過程中檢查是否會超過 <code>2^31-1</code> 或小於 <code>-2^31</code></li>
-<li>最後補回正負號<br>這種方法比較貼近題目的考點，比用字串反轉的效率更高且更省空間</li>
-</ol>
-<p><strong>時間複雜度</strong>: O(n) ,<code>n </code>表示數字的位數<br><strong>空間複雜度</strong>: O(1) ,只用了常數變數</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>(<span class="hljs-title class_ inherited__">object</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">reverse</span>(<span class="hljs-params">self, x</span>):<br>        MAX,MIN = <span class="hljs-number">2</span>**<span class="hljs-number">31</span> - <span class="hljs-number">1</span> , -<span class="hljs-number">2</span>**<span class="hljs-number">31</span><br>        sign = <span class="hljs-number">1</span> <span class="hljs-keyword">if</span> x&gt;<span class="hljs-number">0</span> <span class="hljs-keyword">else</span> -<span class="hljs-number">1</span><br>        x = <span class="hljs-built_in">abs</span>(x)<br><br>        rx =<span class="hljs-number">0</span><br>        <span class="hljs-keyword">while</span> x!=<span class="hljs-number">0</span>:<br>            last = x%<span class="hljs-number">10</span><br>            x//=<span class="hljs-number">10</span><br>            <span class="hljs-keyword">if</span> rx &gt; MAX//<span class="hljs-number">10</span>:<br>                <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>            rx = rx*<span class="hljs-number">10</span>+last<br>        <span class="hljs-keyword">return</span> rx*sign<br></code></pre></td></tr></table></figure>
+<p><strong>時間複雜度</strong>: O(n³)，n 是陣列的長度，外層雙層迴圈搭配內層線性雙指針搜尋<br><strong>空間複雜度</strong>: O(1)，僅使用常數額外變數</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">fourSum</span>(<span class="hljs-params">self, nums: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>], target: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-type">List</span>[<span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]]:<br>        length = <span class="hljs-built_in">len</span>(nums)<br>    <br>        <span class="hljs-keyword">if</span> length &lt; <span class="hljs-number">4</span>:<br>            <span class="hljs-keyword">return</span> []<br>        <br>        nums.sort()<br>        result = []<br>        <br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(length-<span class="hljs-number">3</span>):<br>            <span class="hljs-keyword">if</span> i&gt;<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> nums[i]==nums[i-<span class="hljs-number">1</span>]:<br>                <span class="hljs-keyword">continue</span><br><br>            min1 = nums[i] + nums[i + <span class="hljs-number">1</span>] + nums[i + <span class="hljs-number">2</span>] + nums[i + <span class="hljs-number">3</span>]<br>            <span class="hljs-keyword">if</span> min1 &gt; target:<br>                <span class="hljs-keyword">break</span><br>            max1 = nums[i] + nums[length - <span class="hljs-number">1</span>] + nums[length - <span class="hljs-number">2</span>] + nums[length - <span class="hljs-number">3</span>]<br>            <span class="hljs-keyword">if</span> max1 &lt; target:<br>                <span class="hljs-keyword">continue</span><br>            <br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(i+<span class="hljs-number">1</span>,length-<span class="hljs-number">2</span>):<br>                <span class="hljs-keyword">if</span> j&gt;i+<span class="hljs-number">1</span> <span class="hljs-keyword">and</span> nums[j]==nums[j-<span class="hljs-number">1</span>]:<br>                    <span class="hljs-keyword">continue</span><br>                <br>                min2 = nums[i] + nums[j] + nums[j + <span class="hljs-number">1</span>] + nums[j + <span class="hljs-number">2</span>]<br>                <span class="hljs-keyword">if</span> min2 &gt; target:<br>                    <span class="hljs-keyword">break</span><br>                max2 = nums[i] + nums[j] + nums[length - <span class="hljs-number">1</span>] + nums[length - <span class="hljs-number">2</span>]<br>                <span class="hljs-keyword">if</span> max2 &lt; target:<br>                    <span class="hljs-keyword">continue</span><br>                <br>                left,right = j+<span class="hljs-number">1</span>,length-<span class="hljs-number">1</span><br>                goal = target-(nums[i]+nums[j])<br><br>                <span class="hljs-keyword">while</span> right&gt;left:<br>                    <span class="hljs-built_in">print</span>(nums[i],nums[j],nums[left],nums[right])<br>                    total = nums[right]+nums[left]<br>                    <span class="hljs-keyword">if</span> total== goal:<br>                        result.append([nums[i],nums[j],nums[left],nums[right]])<br>                        <span class="hljs-keyword">while</span> right&gt;left <span class="hljs-keyword">and</span> nums[right]==nums[right-<span class="hljs-number">1</span>]:<br>                            right-=<span class="hljs-number">1</span><br>                        <span class="hljs-keyword">while</span> right&gt;left <span class="hljs-keyword">and</span> nums[left]==nums[left+<span class="hljs-number">1</span>]:<br>                            left+=<span class="hljs-number">1</span><br>                        left+=<span class="hljs-number">1</span><br>                        right-=<span class="hljs-number">1</span><br>                    <span class="hljs-keyword">elif</span> total&lt;goal:<br>                        left+=<span class="hljs-number">1</span><br>                    <span class="hljs-keyword">else</span>:<br>                        right-=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">return</span> result<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -358,8 +362,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LeetCode 7 - Reverse Integer</div>
-      <div>https://zongda617.github.io/2025/09/24/LeetCode-7-Reverse-Integer/</div>
+      <div>LeetCode 18 - 4Sum</div>
+      <div>https://zongda617.github.io/2025/10/16/LeetCode-18-4Sum/</div>
     </div>
     <div class="license-meta">
       
@@ -371,7 +375,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>September 24, 2025</div>
+          <div>October 16, 2025</div>
         </div>
       
       
@@ -403,18 +407,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/09/26/Markdown/" title="寫文件必學！Markdown 全面指南">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">寫文件必學！Markdown 全面指南</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/09/23/LeetCode-6-Zigzag-Conversion/" title="LeetCode 6 - Zigzag Conversion">
-                        <span class="hidden-mobile">LeetCode 6 - Zigzag Conversion</span>
+                      <a href="/2025/10/15/LeetCode-17-Letter-Combinations-of-a-Phone-Number/" title="LeetCode 17 - Letter Combinations of a Phone Number">
+                        <span class="hidden-mobile">LeetCode 17 - Letter Combinations of a Phone Number</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
