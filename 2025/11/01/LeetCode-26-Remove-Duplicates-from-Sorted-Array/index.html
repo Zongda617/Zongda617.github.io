@@ -19,22 +19,22 @@
   <meta name="author" content="李宗達">
   <meta name="keywords" content="">
   
-    <meta name="description" content="UVA 00272-TeX-Quotes👉 題目連結 📖題目說明給你一段文章，將文章中的雙引號&quot; &quot;用 &#96;&#96; 及 ‘’ 表示  第一個遇到的 “ 換成 &#96;&#96; 第二個遇到的 “ 換成 ‘’ 第三個再換成 &#96;&#96;，以此類推交替處理   輸入與輸出輸入一段文章直到檔案結束（EOF）。 輸出將輸入文字中的每個雙引號替換成對應的 &amp;#96">
+    <meta name="description" content="LeetCode 26 - Remove Duplicates from Sorted Array👉 題目連結 📖題目說明 Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only on">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UVA 00272-TeX-Quotes">
-<meta property="og:url" content="https://zongda617.github.io/2025/09/11/UVA-00272-TeX-Quotes/index.html">
+<meta property="og:title" content="LeetCode 26 - Remove Duplicates from Sorted Array">
+<meta property="og:url" content="https://zongda617.github.io/2025/11/01/LeetCode-26-Remove-Duplicates-from-Sorted-Array/index.html">
 <meta property="og:site_name" content="ZongDa&#39;s website">
-<meta property="og:description" content="UVA 00272-TeX-Quotes👉 題目連結 📖題目說明給你一段文章，將文章中的雙引號&quot; &quot;用 &#96;&#96; 及 ‘’ 表示  第一個遇到的 “ 換成 &#96;&#96; 第二個遇到的 “ 換成 ‘’ 第三個再換成 &#96;&#96;，以此類推交替處理   輸入與輸出輸入一段文章直到檔案結束（EOF）。 輸出將輸入文字中的每個雙引號替換成對應的 &amp;#96">
+<meta property="og:description" content="LeetCode 26 - Remove Duplicates from Sorted Array👉 題目連結 📖題目說明 Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only on">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-09-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-09-17T03:53:16.737Z">
+<meta property="article:published_time" content="2025-10-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-11-01T07:57:52.877Z">
 <meta property="article:author" content="李宗達">
-<meta property="article:tag" content="UVA">
+<meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>UVA 00272-TeX-Quotes - ZongDa&#39;s website</title>
+  <title>LeetCode 26 - Remove Duplicates from Sorted Array - ZongDa&#39;s website</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="UVA 00272-TeX-Quotes"></span>
+            <span id="subtitle" data-typed-text="LeetCode 26 - Remove Duplicates from Sorted Array"></span>
           
         </div>
 
@@ -209,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-09-11 00:00" pubdate>
-          September 11, 2025 am
+        <time datetime="2025-11-01 00:00" pubdate>
+          November 1, 2025 am
         </time>
       </span>
     
@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          498 words
+          746 words
         
       </span>
     
@@ -232,7 +232,7 @@
         
         
         
-          5 mins
+          7 mins
         
       </span>
     
@@ -269,63 +269,56 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">UVA 00272-TeX-Quotes</h1>
+            <h1 id="seo-header">LeetCode 26 - Remove Duplicates from Sorted Array</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="UVA-00272-TeX-Quotes"><a href="#UVA-00272-TeX-Quotes" class="headerlink" title="UVA 00272-TeX-Quotes"></a>UVA 00272-TeX-Quotes</h1><p>👉 <a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=c007">題目連結</a></p>
-<h2 id="📖題目說明"><a href="#📖題目說明" class="headerlink" title="📖題目說明"></a>📖題目說明</h2><p>給你一段文章，<br>將文章中的雙引號<code>&quot; &quot;</code>用 &#96;&#96; 及 ‘’ 表示</p>
+                <h1 id="LeetCode-26-Remove-Duplicates-from-Sorted-Array"><a href="#LeetCode-26-Remove-Duplicates-from-Sorted-Array" class="headerlink" title="LeetCode 26 - Remove Duplicates from Sorted Array"></a>LeetCode 26 - Remove Duplicates from Sorted Array</h1><p>👉 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/">題目連結</a></p>
+<h2 id="📖題目說明"><a href="#📖題目說明" class="headerlink" title="📖題目說明"></a>📖題目說明</h2><blockquote>
+<p>Given an integer array <code>nums</code> sorted in <strong>non-decreasing</strong> order, remove the duplicates <strong>in-place</strong> such that each unique element appears only <strong>once</strong>. The <strong>relative order</strong> of the elements should be kept the <strong>same</strong><br>Consider the number of unique elements in <code>nums</code> to be <code>k</code>​​​​​​​​​​​​​​. After removing duplicates, return the number of unique elements <code>k</code>.<br>The first <code>k</code> elements of <code>nums</code> should contain the unique numbers in <strong>sorted order</strong>. The remaining elements beyond index <code>k - 1</code> can be ignored.</p>
+</blockquote>
+<p>給一個升序排序的整數數組 <code>nums</code>，需在原陣列就地刪除重複項，以便每個唯一元素只出現一次<br>元素的相對順序應保持相同<br>考慮 <code>nums</code> 中唯一元素的數量為 <code>k</code>，如果要通過必須完成以下條件:</p>
 <ul>
-<li>第一個遇到的 “ 換成 &#96;&#96;</li>
-<li>第二個遇到的 “ 換成 ‘’</li>
-<li>第三個再換成 &#96;&#96;，以此類推交替處理</li>
+<li>更改陣列 <code>nums</code>，使前 <code>k</code> 個元素是<code>nums</code>的唯一元素，順序應保持相同</li>
+<li>返回 k</li>
 </ul>
+<p>舉例:<br>假設輸入的陣列 <code>nums</code> 是：<code>[0, 0, 1, 1, 1, 2, 2, 3, 3, 4]</code><br>你的任務並不是真的把陣列縮短，而是要把<strong>唯一</strong>的元素全部往前推，覆蓋掉重複的元素<br>處理完後，這個 <code>nums</code> 陣列的前 <code>k</code> 個元素必須是：<code>[0, 1, 2, 3, 4, ...]</code>陣列後面長什麼樣子一點都不重要<br>在這個例子中，唯一的元素是 <code>0, 1, 2, 3, 4</code>，總共有 5 個。所以，你最終應該返回 <code>k = 5</code></p>
 <hr>
-<h2 id="輸入與輸出"><a href="#輸入與輸出" class="headerlink" title="輸入與輸出"></a>輸入與輸出</h2><h3 id="輸入"><a href="#輸入" class="headerlink" title="輸入"></a>輸入</h3><p>一段文章直到檔案結束（EOF）。</p>
-<h3 id="輸出"><a href="#輸出" class="headerlink" title="輸出"></a>輸出</h3><p>將輸入文字中的每個雙引號替換成對應的 &#96;&#96; 或 ‘’，並輸出完整結果</p>
-<hr>
-<blockquote>
-<p><strong>⚠️注意事項與陷阱</strong></p>
-<ol>
-<li><strong>輸入方式</strong>: 本題輸入為「多行直到 EOF」，必須能持續讀檔，不可只讀一行。</li>
-<li><strong>內容保留</strong>: 除了雙引號要轉換，其餘文字必須完整保留，不能有任何變動。</li>
-</ol>
+<h2 id="範例輸入與輸出"><a href="#範例輸入與輸出" class="headerlink" title="範例輸入與輸出"></a>範例輸入與輸出</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><blockquote>
+<p><strong>Input</strong>:  nums &#x3D; [1,1,2]<br><strong>Output</strong>: 2, nums &#x3D; [1,2,_]<br><strong>Explanation</strong>:Your function should return k &#x3D; 2, with the first two elements of nums being 1 and 2 respectively.<br>It does not matter what you leave beyond the returned k (hence they are underscores).</p>
+</blockquote>
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><blockquote>
+<p><strong>Input</strong>: nums &#x3D; [0,0,1,1,1,2,2,3,3,4]<br><strong>Output</strong>: 5, nums &#x3D; [0,1,2,3,4,<em>,</em>,<em>,</em>,_]<br><strong>Explanation</strong>:Your function should return k &#x3D; 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.<br>It does not matter what you leave beyond the returned k (hence they are underscores).</p>
 </blockquote>
 <hr>
-<h2 id="解題想法"><a href="#解題想法" class="headerlink" title="解題想法"></a>解題想法</h2><ol>
-<li>設一個<strong>布林變數</strong> <code>isOpening = true</code></li>
-<li>從頭讀入整段文字，逐字掃描：</li>
+<h2 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h2><ul>
+<li><code>1 &lt;= nums.length &lt;= 3 * 10^4</code></li>
+<li><code>-100 &lt;= nums[i] &lt;= 100</code></li>
+<li><code>nums</code> 按非降序排序</li>
+</ul>
+<hr>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="暴力法"><a href="#暴力法" class="headerlink" title="暴力法"></a>暴力法</h3><p><strong>解題想法</strong>:<br>這是一個最直觀的做法，直接刪除重複的元素</p>
+<ol>
+<li>我從陣列的尾巴往前遍歷</li>
+<li>在遍歷時，我比較當前元素和它前一個元素是否相同</li>
+<li>如果相同，我就利用 <code>pop()</code> 函式將當前這個重複的元素原地刪除</li>
+<li>當我遍歷完畢，陣列中剩下的就都是唯一元素，我直接返回陣列的最終長度即可</li>
 </ol>
+<p><strong>時間複雜度</strong>: O(n^2)，遍歷陣列是 O(n)，但在迴圈中呼叫 <code>pop</code> 是一個 O(n) 的操作<br><strong>空間複雜度</strong>: O(1) ， 操作是在原始陣列上完成的，沒有使用額外空間</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">removeDuplicates</span>(<span class="hljs-params">self, nums: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]</span>) -&gt; <span class="hljs-built_in">int</span>:<br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> nums:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(nums) - <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, -<span class="hljs-number">1</span>):<br>            <span class="hljs-keyword">if</span> nums[i] == nums[i-<span class="hljs-number">1</span>]:<br>                nums.pop(i)<br>        <br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>(nums)<br></code></pre></td></tr></table></figure>
+
+<h3 id="雙指針法"><a href="#雙指針法" class="headerlink" title="雙指針法"></a>雙指針法</h3><p><strong>解題想法</strong>:<br>這個解法的核心是原地覆蓋，而不是刪除，於是我使用雙指針:</p>
 <ul>
-<li>如果遇到 “, 檢查 isOpening：<ul>
-<li>若 <code>true</code> → 輸出 <code>``</code>，並將 <code>isOpening = false</code></li>
-<li>若 <code>false</code> → 輸出 ‘’，<code>並將 isOpening = true</code></li>
+<li>慢指針 (<code>slow</code>)：指向<strong>唯一元素區</strong>的最後一個位置</li>
+<li>快指針 (<code>fast</code>)：它負責在陣列中尋找下一個不重複的元素<br><code>fast</code> 不斷向後移動</li>
+<li>如果 <code>fast</code> 和 <code>slow</code> 指向的元素<strong>相同</strong>，<code>fast</code> 就繼續前進，而 <code>slow</code> 保持不動</li>
+<li>當 <code>fast</code> 與 <code>slow</code> 指向的元素<strong>不同</strong>，將 <code>slow</code> 指針前進一格， 把<code>fast</code>的值複製到<code>slow</code>位置<br>當 <code>fast</code> 遍歷完畢，<code>slow</code> 指針加 1 之後的位置，就是唯一元素的總長度 <code>k</code></li>
 </ul>
-</li>
-<li>其他字元 → 原樣輸出。</li>
-</ul>
-<ol start="3">
-<li>持續處理直到檔案結束。</li>
-</ol>
-<hr>
-<h2 id="範例輸入與輸出"><a href="#範例輸入與輸出" class="headerlink" title="範例輸入與輸出"></a>範例輸入與輸出</h2><table>
-<thead>
-<tr>
-<th>Sample Input</th>
-<th>Sample Output</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>“To be or not to be,” quoth the Bard, “that is the question”.<br>The programming contestant replied: “I must disagree.<br>To &#96;C’ or not to &#96;C’, that is The Question!”</td>
-<td>&#96;&#96;To be or not to be,’’ quoth the Bard, &#96;&#96;that is the question’’.<br>The programming contestant replied: &#96;&#96;I must disagree.<br>To &#96;C’ or not to &#96;C’, that is The Question!’’</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="解法-AC-code"><a href="#解法-AC-code" class="headerlink" title="解法-AC code"></a>解法-AC code</h2><h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> sys<br><br>isOpening = <span class="hljs-literal">True</span><br><span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> sys.stdin:<br>    output = []<br>    <span class="hljs-keyword">for</span> ch <span class="hljs-keyword">in</span> line:<br>        <span class="hljs-keyword">if</span> ch == <span class="hljs-string">&#x27;&quot;&#x27;</span>:<br>            <span class="hljs-keyword">if</span> isOpening:<br>                output.append(<span class="hljs-string">&quot;``&quot;</span>)<br>                isOpening = <span class="hljs-literal">False</span><br>            <span class="hljs-keyword">else</span>:<br>                output.append(<span class="hljs-string">&quot;&#x27;&#x27;&quot;</span>)<br>                isOpening = <span class="hljs-literal">True</span><br>        <span class="hljs-keyword">else</span>:<br>            output.append(ch)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&quot;</span>.join(output), end=<span class="hljs-string">&quot;&quot;</span>)<br></code></pre></td></tr></table></figure>
-<h3 id="JAVA"><a href="#JAVA" class="headerlink" title="JAVA"></a>JAVA</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.io.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        <span class="hljs-type">BufferedReader</span> <span class="hljs-variable">br</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedReader</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">InputStreamReader</span>(System.in));<br>        String line;<br>        <span class="hljs-type">boolean</span> <span class="hljs-variable">isOpening</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;<br>        <span class="hljs-keyword">while</span> ((line = br.readLine()) != <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">sb</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> ch : line.toCharArray()) &#123;<br>                <span class="hljs-keyword">if</span> (ch == <span class="hljs-string">&#x27;&quot;&#x27;</span>) &#123;<br>                    <span class="hljs-keyword">if</span> (isOpening) &#123;<br>                        sb.append(<span class="hljs-string">&quot;``&quot;</span>);<br>                        isOpening = <span class="hljs-literal">false</span>;<br>                    &#125; <span class="hljs-keyword">else</span> &#123;<br>                        sb.append(<span class="hljs-string">&quot;&#x27;&#x27;&quot;</span>);<br>                        isOpening = <span class="hljs-literal">true</span>;<br>                    &#125;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    sb.append(ch);<br>                &#125;<br>            &#125;<br>            System.out.println(sb.toString());<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-type">int</span> ch;<br>    <span class="hljs-type">int</span> isOpening = <span class="hljs-number">1</span>; <span class="hljs-comment">// true</span><br>    <span class="hljs-keyword">while</span> ((ch = getchar()) != EOF) &#123;<br>        <span class="hljs-keyword">if</span> (ch == <span class="hljs-string">&#x27;&quot;&#x27;</span>) &#123;<br>            <span class="hljs-keyword">if</span> (isOpening) &#123;<br>                <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;``&quot;</span>);<br>                isOpening = <span class="hljs-number">0</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;&#x27;&#x27;&quot;</span>);<br>                isOpening = <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-built_in">putchar</span>(ch);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">char</span> ch;<br>    <span class="hljs-type">bool</span> isOpening = <span class="hljs-literal">true</span>;<br>    <span class="hljs-keyword">while</span> (cin.<span class="hljs-built_in">get</span>(ch)) &#123;<br>        <span class="hljs-keyword">if</span> (ch == <span class="hljs-string">&#x27;&quot;&#x27;</span>) &#123;<br>            <span class="hljs-keyword">if</span> (isOpening) &#123;<br>                cout &lt;&lt; <span class="hljs-string">&quot;``&quot;</span>;<br>                isOpening = <span class="hljs-literal">false</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                cout &lt;&lt; <span class="hljs-string">&quot;&#x27;&#x27;&quot;</span>;<br>                isOpening = <span class="hljs-literal">true</span>;<br>            &#125;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            cout &lt;&lt; ch;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>時間複雜度</strong>:O(n)， 快慢指針都只會從頭到尾遍歷陣列一次<br><strong>空間複雜度</strong>:O(1)，只使用了兩個指針變數</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">removeDuplicates</span>(<span class="hljs-params">self, nums: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]</span>) -&gt; <span class="hljs-built_in">int</span>:<br>        slow = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> fast <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-built_in">len</span>(nums)):<br>            <span class="hljs-keyword">if</span> nums[slow] != nums[fast]:<br>                slow+=<span class="hljs-number">1</span><br>                nums[slow] = nums[fast]<br>        <span class="hljs-keyword">return</span> slow+<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+
                 
               </div>
             
@@ -343,7 +336,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/UVA/" class="category-chain-item">UVA</a>
+  <a href="/categories/LeetCode/" class="category-chain-item">LeetCode</a>
   
   
 
@@ -358,7 +351,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/UVA/" class="print-no-link">#UVA</a>
+        <a href="/tags/LeetCode/" class="print-no-link">#LeetCode</a>
       
     </div>
   
@@ -370,8 +363,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>UVA 00272-TeX-Quotes</div>
-      <div>https://zongda617.github.io/2025/09/11/UVA-00272-TeX-Quotes/</div>
+      <div>LeetCode 26 - Remove Duplicates from Sorted Array</div>
+      <div>https://zongda617.github.io/2025/11/01/LeetCode-26-Remove-Duplicates-from-Sorted-Array/</div>
     </div>
     <div class="license-meta">
       
@@ -383,7 +376,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>September 11, 2025</div>
+          <div>November 1, 2025</div>
         </div>
       
       
@@ -415,18 +408,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/09/12/UVA-00299-Train-Swapping/" title="UVA 00299 - Train Swapping">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">UVA 00299 - Train Swapping</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/09/09/UVA-00100-The-3n-1-problem/" title="UVA 00100 - The 3n + 1 problem">
-                        <span class="hidden-mobile">UVA 00100 - The 3n + 1 problem</span>
+                      <a href="/2025/10/31/LeetCode-25-Reverse-Nodes-in-k-Group/" title="LeetCode 25 - Reverse Nodes in k-Group">
+                        <span class="hidden-mobile">LeetCode 25 - Reverse Nodes in k-Group</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
